@@ -1,0 +1,47 @@
+<template>
+  <div>
+    <svg class="Sphere" width="100%" height="100%" viewBox="0 0 502 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="251.5" cy="250" r="250" fill="url(#paint0_radial)"/>
+      <path d="M248 252L416 62.5L296 497.5L1 224L312 10.5L416 440.5L27.5 357.5L232 497.5C190.667 344.5 109.3 39 114.5 41C119.7 43 290 325.833 374.5 467L493.5 189.5" stroke="url(#paint1_radial)" stroke-opacity="0.75"/>
+      <defs>
+        <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(251.5 250) rotate(90) scale(250)">
+          <stop stop-color="#B8B5B3"/>
+          <stop offset="1" stop-color="#C4C4C4" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(247 245) rotate(89.9433) scale(252.5 255.352)">
+          <stop stop-color="#777272"/>
+          <stop offset="1" stop-color="#777272" stop-opacity="0.15"/>
+        </radialGradient>
+      </defs>
+    </svg>
+  </div> 
+</template>
+
+<style>
+
+.Sphere{
+  width: 50%;
+  height: 50%;
+  opacity: 0;
+  z-index: 9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn 10s infinite alternate;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+</style>
