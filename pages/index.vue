@@ -17,9 +17,13 @@ export default {
 
 <style lang="scss" scoped>
 
-.phantomDiv {
+.container {
+  height: 100%;
+  .phantomDiv {
     color: transparent;
     height: 100%;
+    border: 1px solid white;
   }
+}
 
 </style>

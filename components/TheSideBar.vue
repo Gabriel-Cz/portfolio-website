@@ -9,24 +9,6 @@
                   </NuxtLink>
                 </span>
             </div>
-            <div v-show="!showBar" class="dots">
-                <span>...</span>
-            </div>
-            <div>
-                <span @click="showBar ? showBar = false : showBar = true ">
-                <svg width="35" height="35" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                      <path d="M18.8945 15.4375L28.4362 25L18.8945 34.5625L21.832 37.5L34.332 25L21.832 12.5L18.8945 15.4375Z" fill="#8C8C8C"/>
-                      <circle cx="25" cy="25" r="24.5" stroke="#8C8C8C"/>
-                    </g>
-                    <defs>
-                      <clipPath id="clip0">
-                        <rect width="50"  height="50" fill="white" transform="translate(0 50) rotate(-90)"/>
-                      </clipPath>
-                    </defs>
-                </svg>
-                </span>
-            </div>
         </div>
         </transition>
     </div>
@@ -149,7 +131,7 @@ $fontLink: 300 16px 'Quicksand', sans-serif;
     }
 }
 
-.nuxt-link-exact-active {
+.nuxt-link-active {
     text-decoration: none;
     color: floralwhite;
     font: $fontLink;

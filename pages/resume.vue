@@ -1,54 +1,58 @@
 <template>
     <div class="container">
-        <div class="resumeWrapper">
-            <div class="infoWrapper">
-              <div class="header">Resume</div>
-              <div class="subheader">
-                Lorem ipsum dolor asimet lorem, asimet ipsum, dolor asimet.
-                Lorem ipsum dolor asimet lorem, asimet ipsum, dolor asimet.
-                Lorem ipsum dolor asimet lorem, asimet ipsum, dolor asimet.
-                Lorem ipsum dolor asimet lorem, asimet ipsum, dolor asimet.
-              </div>
-            </div>
+      <div class="resumeWrapper">
+        <div class="header">Resume</div>
+        <div class="content">
+          {{ content }} 
         </div>
+      </div>
     </div>
 </template>
 
+<script>
+export default {
+  data: () => ({
+    content: "",
+  }),
+  async fetch() {
+    try {
+      this.$axios.get('/resume')
+      .then(res => content = res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+</script>
+
+
 <style lang="scss" scoped>
 
-$fontHeader: 300 26px 'Quicksand', sans-serif;
-$fontSubheader: 400 18px 'Quicksand', sans-serif;
+$fontHeader: 300 26px 'Raleway', sans-serif;
+$fontContent: 400 18px 'Raleway', sans-serif;
 
 .container {
     width: 100%;
+    border: solid;
     height: 100%;
     color: floralwhite;
     text-align: center;
-    display: grid;
-    place-items: center;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .resumeWrapper {
-      position: relative;
       width: 50%;
-      padding-top: (500 / 500) * 50;
       .header {
-        width: 100%;
-        padding: 30px 10px;
         font: $fontHeader;
-    }
-      .subheader {
-        width: 100%;
-        padding: 30px 10px;
-        font: $fontSubheader;
-    }
-    .responsiveFrame {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+        margin-top: 50px;
+        letter-spacing: 1px;
+      }
+      .content {
+        font: $fontContent;
+        margin-top: 50px;
+        letter-spacing: 1px;
+      }
     }
 }
+
 </style>

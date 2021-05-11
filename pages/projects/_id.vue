@@ -16,20 +16,10 @@
                   v-for="technology in project.technologies"
                   :key="technology.type"
                 >
-                    <div class="technologyInfo">
-                        <div class="technologyType-Column">
-                            <h3 class="technologyType">{{ technology.type }} :</h3> 
-                        </div>
-                        <div class="singleTechSpan-Column">
-                            <span 
-                               v-for="item in technology.stack"
-                               :key="item.index"  
-                               class="singleTechSpan"
-                            >
-                               {{ item }}
-                            </span>
-                        </div>
-                    </div>
+                    <TechStackComponent 
+                      :techType="technology.type"
+                      :techStack="technology.stack"
+                    />
                 </div> 
             </div>
             </div>
@@ -40,10 +30,12 @@
 <script>
 
 import ProjectCard from '@/components/ProjectCard'
+import TechStackComponent from '@/components/TechStackComponent'
 
     export default {
         components: {
             ProjectCard,
+            TechStackComponent
         },
         data: () => ({
             project: "",
@@ -140,35 +132,6 @@ $fontLink: 300 16px 'Quicksand', sans-serif;
             display: flex;
             flex-direction: column;
             margin-top: 50px;
-            .technologyInfo {
-                height: 100%;
-                display: grid;
-                grid-template-columns: repeat(12, 1fr);
-                margin: 20px 20px 10px 20px;
-                .technologyType-Column {
-                    @include mixin.media(xs) {
-                        grid-area: 1 / 1 / 2 / 13;
-                    } 
-                    grid-area: 1 / 1 / 2 / 3;
-                    .technologyType {
-                        font-weight: 300;
-                        text-align: center;
-                    }
-                }
-                .singleTechSpan-Column {
-                    @include mixin.media(xs) {
-                        grid-area: 1 / 1 / 2 / 13;
-                    } 
-                    grid-area: 1 / 3 / 2 / 13;
-                    .singleTechSpan{
-                        margin: 0px 10px 0px 10px;
-                        padding: 5px 10px;
-                        text-transform: capitalize;
-                        box-shadow: 3px 3px rgba($color: #E0E0E0, $alpha: 0.5);
-                        border: 1px ridge rgba($color: #E0E0E0, $alpha: 1.0);
-                    }
-                }
-            }
         }
     }
 }
