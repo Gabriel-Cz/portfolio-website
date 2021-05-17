@@ -65,6 +65,7 @@ $fontLink: 300 16px 'Quicksand', sans-serif;
             width: 60%;
             margin: 0px 20px 10px 0px;
         }
+        width: 60%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -103,13 +104,14 @@ $fontLink: 300 16px 'Quicksand', sans-serif;
         @include mixin.media(xs) {
             width: 50%;
         }
+        width: 60%;
+        height: 80%;
         display: flex;
         img {
-            border-right: 6px solid #E0E0E0;
             padding: none;
             margin: none;
             border-radius: 5px;
-            box-shadow: 5px 5px 5px rgba($color: white, $alpha: 0.1);
+            box-shadow: 5px 5px 1px rgba($color: white, $alpha: 0.5);
         }
     }
 }
@@ -130,14 +132,14 @@ $fontLink: 300 16px 'Quicksand', sans-serif;
 
 .nuxt-link-details {
     @extend .nuxt-link;
-    color: #B3E5FC;
+    color: #E1F5FE;
     margin-left: 10px;
 }
 
 .nuxt-link-live {
     @extend .nuxt-link;
-    margin-left: 10px;
-    color: #AED581;
+    margin-left: 20px;
+    color:#AED581;
 }
 
 </style>

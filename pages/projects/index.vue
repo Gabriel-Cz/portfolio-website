@@ -11,7 +11,7 @@
               :projectId="project.id"
               :projectName="project.name"
               :projectDescription="project.description"
-              :projectImage="project.image"
+              :projectImage="'http://localhost:1337' + project.image.formats.small.url"
             />
         </div>
         </div>
@@ -34,7 +34,10 @@ import ProjectCard from '@/components/ProjectCard'
         async fetch() {
             try {
                 this.$axios.get('http://localhost:1337/featured-projects')
-                .then(res => this.projectsData = res.data);
+                .then(res => {
+                    console.log(res.data);
+                    this.projectsData = res.data
+                });
             } catch (error) {
                 console.log(error)
             }

@@ -20,7 +20,7 @@ export default {
       { rel: 'stylesheet',  href: "https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap"},
       { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"},
       { rel: 'stylesheet', href: "https://fonts.googleapis.com/icon?family=Material+Icons" },
-      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap"}
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"}
     ]
   },
 
@@ -53,6 +53,9 @@ export default {
 
   axios: {
     baseURL: "http://localhost:1337"
+  },
+  server: {
+    port: 8080
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

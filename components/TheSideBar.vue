@@ -23,7 +23,7 @@ export default {
             transitionName: "",
             mode: "",
             links: [
-                {name: "Stack", link: "/"},
+                {name: "Stack", link: "/techStack"},
                 {name: "Projects", link: "/projects"},
                 {name: "Resume", link: "/resume"},
                 {name: "Github", link: "/github"},

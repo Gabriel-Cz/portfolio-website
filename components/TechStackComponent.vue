@@ -46,14 +46,14 @@
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         margin: 20px 20px 10px 20px;
-        .technologyType-Column {
+           .technologyType-Column {
             @include mixin.media(xs) {
-                grid-area: 1 / 1 / 2 / 5;
+                grid-area: 1 / 1 / 2 / 6;
             } 
             @include mixin.media(sm) {
                 grid-area: 1 / 1 / 2 / 5;
             } 
-            grid-area: 1 / 1 / 2 / 3;
+            grid-area: 1 / 1 / 2 / 5;
             .technologyType {
                 margin: 10px 0px 10px 0px;
                 font-weight: 300;
@@ -62,14 +62,15 @@
             }
             .singleTechSpan-Column {
                 @include mixin.media(xs) {
-                    grid-area: 1 / 5 / 2 / 13;
+                    grid-area: 1 / 6 / 2 / 13;
                 }
                 @include mixin.media(sm) {
                     grid-area: 1 / 5 / 2 / 13;
                 }
                 display: flex;
                 flex-wrap: wrap;
-                grid-area: 1 / 3 / 2 / 13;
+                align-items: center;
+                grid-area: 1 / 5 / 2 / 13;
                 .singleTechSpan{
                     margin: 10px;
                     padding: 5px 10px;

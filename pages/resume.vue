@@ -1,9 +1,11 @@
 <template>
     <div class="container">
       <div class="resumeWrapper">
-        <div class="header">Resume</div>
-        <div class="content">
-          {{ content }} 
+        <div class="div1">
+          <div class="header">Resume</div>
+             <div class="content">
+              {{ content }} <NuxtLink class="nuxt-link" to="/teckStack">Stack.</NuxtLink> 
+             </div>
         </div>
       </div>
     </div>
@@ -17,7 +19,7 @@ export default {
   async fetch() {
     try {
       this.$axios.get('/resume')
-      .then(res => content = res.data);
+      .then(res => this.content = res.data.content);
     } catch (error) {
       console.log(error);
     }
@@ -28,29 +30,56 @@ export default {
 
 <style lang="scss" scoped>
 
-$fontHeader: 300 26px 'Raleway', sans-serif;
-$fontContent: 400 18px 'Raleway', sans-serif;
+@use '@/assets/_mediaMixin.scss' as mixin;
+
+$fontHeader: 400 26px 'Montserrat', sans-serif;
+$fontContent: 300 18px 'Montserrat', sans-serif;
 
 .container {
     width: 100%;
-    border: solid;
-    height: 100%;
     color: floralwhite;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     .resumeWrapper {
-      width: 50%;
-      .header {
-        font: $fontHeader;
+      @include mixin.media(xs) {
         margin-top: 50px;
+        width: 90%;
+      }
+      @include mixin.media(sm) {
+        margin-top: 50px;
+        width: 75%;
+      }
+      margin-top: 200px;
+      width: 50%;
+      border-radius: 5px;
+      .div1 {
+        padding: 25px;
+        border: 4px double rgba($color: #CFD8DC, $alpha: 0.25);
+        border-radius: 5px;
+      }
+      .div2 {
+        padding-bottom: 25px;
+        padding-right: 25px;
+        border-bottom: 4px double rgba($color: #CFD8DC, $alpha: 0.25);
+        border-right: 4px double rgba($color: #CFD8DC, $alpha: 0.25);
+        border-radius: 5px;
+      }
+      .header {
+        margin-top: 25px;
+        font: $fontHeader;
         letter-spacing: 1px;
       }
       .content {
         font: $fontContent;
-        margin-top: 50px;
+        margin: 50px 25px 20px 25px;
         letter-spacing: 1px;
+        line-height: 25px;
+        .nuxt-link {
+          text-decoration: none;
+          color: #26A69A;
+        }
       }
     }
 }
