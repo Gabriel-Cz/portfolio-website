@@ -32,11 +32,12 @@ export default {
 
 @use '@/assets/_mediaMixin.scss' as mixin;
 
-$fontHeader: 400 26px 'Montserrat', sans-serif;
-$fontContent: 300 18px 'Montserrat', sans-serif;
+$fontHeader: 400 26px 'Libre Franklin', sans-serif;
+$fontContent: 300 18px 'Libre Franklin', sans-serif;
 
 .container {
     width: 100%;
+    height: 100vh;
     color: floralwhite;
     text-align: center;
     display: flex;
@@ -51,12 +52,12 @@ $fontContent: 300 18px 'Montserrat', sans-serif;
         margin-top: 50px;
         width: 75%;
       }
-      margin-top: 200px;
+      margin-top: 50px;
       width: 50%;
       border-radius: 5px;
       .div1 {
         padding: 25px;
-        border: 4px double rgba($color: #CFD8DC, $alpha: 0.25);
+        border: 4px double rgba($color: #CFD8DC, $alpha: 0.20);
         border-radius: 5px;
       }
       .div2 {

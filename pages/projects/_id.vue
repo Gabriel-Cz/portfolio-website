@@ -65,12 +65,7 @@ $fontTitle: 400 20px'Raleway', sans-serif;
 $fontDescription: 300 16px 'Raleway', sans-serif;
 $fontLink: 300 16px 'Quicksand', sans-serif;
 
-#projectWrapper {
-    height: 100%;
-}
-
 .container {
-    height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;

@@ -9,7 +9,7 @@
             </div>
             <div class="projectLinks">
                 <NuxtLink class="nuxt-link-details" :to="'/projects/' + projectId">Project Details</NuxtLink>
-                <NuxtLink class="nuxt-link-live" :to="'/projects/' + projectId">See Live Project</NuxtLink>
+                <a class="nuxt-link-live" :href="projectLiveUrl">See Live Project</a>
             </div>
         </div>
         <div class="projectImage-Wrapper">
@@ -25,6 +25,8 @@
             projectName: String,
             projectDescription: String,
             projectImage: String,
+            projectDetailsLink: String,
+            projectLiveUrl: String,
         }
     }
 </script>
@@ -33,9 +35,9 @@
 
 @use '@/assets/_mediaMixin.scss' as mixin;
 
-$fontTitle: 400 20px'Raleway', sans-serif;
-$fontDescription: 300 16px 'Raleway', sans-serif;
-$fontLink: 300 16px 'Quicksand', sans-serif;
+$fontTitle: 400 20px 'Libre Franklin', sans-serif;
+$fontDescription: 300 16px 'Libre Franklin', sans-serif;
+$fontLink: 300 16px 'Libre Franklin', sans-serif;
 
 #projectCard {
     @include mixin.media(xs) {
@@ -46,6 +48,9 @@ $fontLink: 300 16px 'Quicksand', sans-serif;
     }
     @include mixin.media(md) {
         width: 80%;
+    }
+    @include mixin.media(lg) {
+        width: 60%;
     }
     width: 50%;
     display: flex;
@@ -110,8 +115,16 @@ $fontLink: 300 16px 'Quicksand', sans-serif;
         img {
             padding: none;
             margin: none;
+            border: 2px ridge rgba($color: white, $alpha: 0.5);
             border-radius: 5px;
-            box-shadow: 5px 5px 1px rgba($color: white, $alpha: 0.5);
+            box-shadow: 5px 5px 1px rgba($color: gainsboro, $alpha: 0.5);
+            transition: 0.5s ease-in-out;
+            &:hover {
+                cursor: pointer;
+                transition: 0.5s ease-in-out;
+                transform: translateY(-5px);
+                box-shadow: 10px 10px 3px rgba($color: gainsboro, $alpha: 0.5);
+            }
         }
     }
 }
@@ -122,7 +135,7 @@ $fontLink: 300 16px 'Quicksand', sans-serif;
     }
     text-decoration: none;
     font: $fontLink;
-    opacity: 0.5;
+    opacity: 0.65;
     transition: 0.5s ease-in-out;
     &:hover {
         transition: 0.5s ease-in-out;
@@ -132,14 +145,15 @@ $fontLink: 300 16px 'Quicksand', sans-serif;
 
 .nuxt-link-details {
     @extend .nuxt-link;
-    color: #E1F5FE;
+    color: #29B6F6;
     margin-left: 10px;
 }
 
 .nuxt-link-live {
     @extend .nuxt-link;
     margin-left: 20px;
-    color:#AED581;
+    color: #26A69A;
+    cursor: pointer;
 }
 
 </style>

@@ -21,8 +21,7 @@ export default {
   height: 100%;
   .phantomDiv {
     color: transparent;
-    height: 100%;
-    border: 1px solid white;
+    height: 100vh;
   }
 }
 

@@ -60,8 +60,8 @@ export default {
             margin-top: 50px;
         }
         margin-top: 100px;
-        font: 22px 'Raleway', sans-serif;
-        color: floralwhite;
+        font: 22px 'Libre Franklin', sans-serif;
+        color: rgba($color: floralwhite, $alpha: 0.50);
         padding: 0px 25px;
     }
     .content-Wrapper {

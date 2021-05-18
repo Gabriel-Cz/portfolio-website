@@ -11,26 +11,26 @@
 <script>
 
 import TheSideBar from '@/components/TheSideBar'
+import Sphere from '@/components/Sphere'
 import TheFooter from '@/components/TheFooter' 
 
 export default {
   components: {
     TheFooter,
-    TheSideBar,
+    Sphere,
+    TheSideBar
   }
 }
 </script>
 
 <style lang="scss">  
 
-$htmlBg: linear-gradient(76.77deg, rgba(28, 28, 28, 0.75) 0%, rgba(105, 105, 105, 0.75) 100%);
+$htmlBg: linear-gradient(76.77deg, #1C1C1C 0%, #696969 100%);
 
-html {
+.defaultContainer {
+  position: relative;
   background: $htmlBg;
   height: 100%;
-  body {
-    overflow-y: auto;
-  }
 }
 
 *,

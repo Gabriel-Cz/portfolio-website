@@ -1,6 +1,6 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
+  ssr: true,
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -20,7 +20,7 @@ export default {
       { rel: 'stylesheet',  href: "https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap"},
       { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"},
       { rel: 'stylesheet', href: "https://fonts.googleapis.com/icon?family=Material+Icons" },
-      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"}
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;1,300&display=swap"}
     ]
   },
 
@@ -31,6 +31,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/preview.client.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

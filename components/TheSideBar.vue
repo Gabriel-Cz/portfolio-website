@@ -3,10 +3,13 @@
         <transition name="sideBarExpand" :mode="mode">
             <div class="sideBarWrapper">
             <div v-show="showBar" class="sideBar">
-                <span v-for="link in links" :key="link.name" class="linkWrapper">
+                <span v-for="link in internalLinks" :key="link.name" class="linkWrapper">
                   <NuxtLink class="nuxt-link" :to="link.link">
-                    {{ link.name }}
+                      {{ link.name }}
                   </NuxtLink>
+                </span>
+                <span v-for="link in externalLinks" :key="link.name" class="linkWrapper">
+                    <a  class="nuxt-link" :href="link.link">{{ link.name }}</a>
                 </span>
             </div>
         </div>
@@ -22,12 +25,14 @@ export default {
             showBar: true,
             transitionName: "",
             mode: "",
-            links: [
+            internalLinks: [
                 {name: "Stack", link: "/techStack"},
                 {name: "Projects", link: "/projects"},
-                {name: "Resume", link: "/resume"},
-                {name: "Github", link: "/github"},
-                {name: "Codepen", link: "/codepen"}
+                {name: "Resume", link: "/resume"}
+            ],
+            externalLinks: [
+                {name: "Github", link: "https://github.com/Gabriel-Cz"},
+                {name: "LinkedIn", link: "https://www.linkedin.com/in/gabriel-c%C3%A1zares-96a9b220a/"}
             ]
         }
     },
@@ -44,7 +49,7 @@ export default {
 
 @use '@/assets/_mediaMixin.scss' as mixin;
 
-$fontLink: 300 16px 'Quicksand', sans-serif;
+$fontLink: 300 16px 'Libre Franklin', sans-serif;
 
 .sideBarWrapper {
     @include mixin.media(xs) {

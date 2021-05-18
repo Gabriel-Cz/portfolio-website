@@ -3,7 +3,7 @@
         <div>
             <div class="pageHeader">
             <p>Featured Projects</p>
-        </div>
+            </div>
         <div class="projectContainer">
             <ProjectCard 
               v-for="project in projectsData"
@@ -60,7 +60,7 @@ import ProjectCard from '@/components/ProjectCard'
             padding: 20px 20px;
         }
         color: rgba($color: floralwhite, $alpha: 0.5);
-        font: 36px 'Raleway', sans-serif;
+        font: 400 32px 'Libre Franklin', sans-serif;
         text-align: center;
         letter-spacing: 1px;
         padding: 100px 20px;

@@ -35,7 +35,7 @@
 @use '@/assets/_mediaMixin.scss' as mixin;
 
 .projectTechnologies {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Libre Franklin', sans-serif;
     color: floralwhite;
     display: flex;
     flex-direction: column;
@@ -56,8 +56,9 @@
             grid-area: 1 / 1 / 2 / 5;
             .technologyType {
                 margin: 10px 0px 10px 0px;
-                font-weight: 300;
-                text-align: center;
+                font-weight: 400;
+                text-align: end;
+                padding-top: 5px;
                 }
             }
             .singleTechSpan-Column {
