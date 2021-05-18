@@ -21,15 +21,79 @@
 <script>
 
 import TechStackComponent from "~/components/TechStackComponent.vue"
+import data from '~/static/content.json'
 
 export default { 
     data: () => ({
-        techStackData: '',
+        techStackData: [
+        {
+          "type": "Frontend",
+          "stack": [
+            "Vue.js",
+            "React.js",
+            "Nuxt.js",
+            "Next.js",
+            "HTML"
+          ]
+        },
+        {
+          "type": "CSS Frameworks and Preprocessors",
+          "stack": [
+            "SCSS",
+            "Talwind",
+            "Vuetify",
+            "Bootstrap",
+            "React-Bootstrap"
+          ]
+        },
+        {
+          "type": "State Managment",
+          "stack": [
+            "Vuex",
+            "Redux",
+            "Next-Redux-Wrapper"
+          ]
+        },
+        {
+          "type": "Backend",
+          "stack": [
+            "Node.js",
+            "Express",
+            "Mongoose",
+            "MongoDB"
+          ]
+        },
+        {
+          "type": "UI sketching and Mockups",
+          "stack": [
+            "Figma"
+          ]
+        },
+        {
+          "type": "Extras",
+          "stack": [
+            "Axios",
+            "Postman",
+            "Github",
+            "Stripe"
+          ]
+        }
+    ],
     }),
     components: { 
         TechStackComponent 
     },
-    async fetch() {
+    created() {
+        this.getStack
+    },
+    methods: {
+        async getStack() {
+            this.$axios.get(data)
+            .then(res => this.techStackData = res.data.stack)
+            .catch(e => console.log(e))
+        }
+    }
+    /*async fetch() {
         try {
             await this.$axios.get('/stack')
             .then(res => {
@@ -39,7 +103,7 @@ export default {
         } catch (error) {
             console.log(error);
         }
-    } 
+    } */
 }
 </script>
 

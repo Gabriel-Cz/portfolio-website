@@ -9,7 +9,7 @@
                   </NuxtLink>
                 </span>
                 <span v-for="link in externalLinks" :key="link.name" class="linkWrapper">
-                    <a  class="nuxt-link" :href="link.link">{{ link.name }}</a>
+                    <a  class="nuxt-link" target="_blank" :href="link.link">{{ link.name }}</a>
                 </span>
             </div>
         </div>

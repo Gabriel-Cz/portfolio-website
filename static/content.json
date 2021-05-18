@@ -1,0 +1,147 @@
+{
+    "featured-projects": [
+        {
+            "id": "1",
+            "name": "Plataforma Verkel",
+            "technologies": [
+                {
+                  "type": "SSR",
+                  "stack": [
+                    "Nuxt.js",
+                    "Vuetify",
+                    "Vuex",
+                    "Firebase"
+                  ],
+                  "extra": [
+                    "REST API Service with firebase-realtime-database",
+                    "Figma",
+                    "Axios"
+                  ]
+                }
+            ],
+            "image": ""
+        },
+        {
+            "id": "2",
+            "name": "Shared Lists",
+            "technologies": [
+                {
+                  "type": "Backend",
+                  "stack": [
+                    "Node.js",
+                    "Express",
+                    "Mongoose",
+                    "MongoDB"
+                  ],
+                  "extras": [
+                    "Postman",
+                    "Figma",
+                    "JSON Web Token",
+                    "Mongo Clusters",
+                    "Middlewares Libreries",
+                    "REST API"
+                  ]
+                },
+                {
+                  "type": "Frontend",
+                  "stack": [
+                    "Vue.js",
+                    "Vuex",
+                    "Tailwind"
+                  ],
+                  "extras": [
+                    "Figma",
+                    "Axios"
+                  ]
+                }
+            ],
+            "image": ""
+        },
+        {
+            "id": "3",
+            "name": "Traversal Jewelry",
+            "technologies": [
+                {
+                  "type": "Backend",
+                  "stack": [
+                    "Node.js",
+                    "Redux"
+                  ],
+                  "extras": [
+                    "Stripe",
+                    "Next-Redux-Wrapper"
+                  ]
+                },
+                {
+                  "type": "Frontend",
+                  "stack": [
+                    "Next.js",
+                    "React-Bootstrap",
+                    "SCSS",
+                    "Redux",
+                    "Next-Redux-Wrapper"
+                  ],
+                  "extras": [
+                    "Figma",
+                    "Axios"
+                  ]
+                }
+            ],
+            "image": ""
+        }
+    ],
+    "stack": [
+        {
+          "type": "Frontend",
+          "stack": [
+            "Vue.js",
+            "React.js",
+            "Nuxt.js",
+            "Next.js",
+            "HTML"
+          ]
+        },
+        {
+          "type": "CSS Frameworks and Preprocessors",
+          "stack": [
+            "SCSS",
+            "Talwind",
+            "Vuetify",
+            "Bootstrap",
+            "React-Bootstrap"
+          ]
+        },
+        {
+          "type": "State Managment",
+          "stack": [
+            "Vuex",
+            "Redux",
+            "Next-Redux-Wrapper"
+          ]
+        },
+        {
+          "type": "Backend",
+          "stack": [
+            "Node.js",
+            "Express",
+            "Mongoose",
+            "MongoDB"
+          ]
+        },
+        {
+          "type": "UI sketching and Mockups",
+          "stack": [
+            "Figma"
+          ]
+        },
+        {
+          "type": "Extras",
+          "stack": [
+            "Axios",
+            "Postman",
+            "Github",
+            "Stripe"
+          ]
+        }
+    ]
+}

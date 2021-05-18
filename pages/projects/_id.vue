@@ -1,5 +1,5 @@
 <template>
-    <div id="project-Wrapper">
+    <div>
         <div class="container">
             <div class="projectData-Wrapper">
                <div class="projectName">
@@ -9,7 +9,10 @@
                 <p>{{ project.description }}</p>
             </div>
             <div class="projectImage">
-                <img :src="project.image" width="50%">
+                <img :src='project.image' width="50%">
+            </div>
+            <div>
+              <a  class="nuxt-link-live" target="_blank" :href="project.link">See Live Project</a>
             </div>
             <div class="projectTechnologies">
                 <div 
@@ -39,20 +42,136 @@ import TechStackComponent from '@/components/TechStackComponent'
         },
         data: () => ({
             project: "",
+            projects: [
+        {
+            "id": "1",
+            "name": "Plataforma Verkel",
+            "description": "An HR concept platform, this was actually an attemp to archive a real world project, with two non-developers as a team, one of them a HR lead, an the other one a Project Managment. The project cannot be omplet by a logic bussines problem. This was the root prototype to test our ideas in a web",
+            "technologies": [
+                {
+                  "type": "Stack",
+                  "stack": [
+                    "Nuxt.js",
+                    "Vuetify",
+                    "Vuex",
+                    "Firebase"
+                  ],
+                },
+                {
+                  "type": "Extra",
+                  "stack": [
+                    "REST API Service with firebase-realtime-database",
+                    "Figma",
+                    "Axios"
+                  ]
+                }
+            ],
+            "image": "/ProjectsImages/VerkelCapture.png",
+            "link": "https://plataforma-verkel-prot.herokuapp.com/",
+        },
+        {
+            "id": "2",
+            "name": "Shared Lists",
+            "description": "A Full-Stack CRUD web application based on lists, with the posibility to shared a list with someone else. This person can edit and add content to the shared list in real time.",
+            "technologies": [
+                {
+                  "type": "Backend",
+                  "stack": [
+                    "Node.js",
+                    "Express",
+                    "Mongoose",
+                    "MongoDB"
+                  ],
+                },
+                {
+                  "type": "Frontend",
+                  "stack": [
+                    "Vue.js",
+                    "Vuex",
+                    "Tailwind"
+                  ],
+                },
+                {
+                  "type": "extras",
+                  "stack": [
+                    "Postman",
+                    "Figma",
+                    "JSON Web Token",
+                    "Mongo Clusters",
+                    "Middlewares Libreries",
+                    "REST API",
+                    "Figma",
+                    "Axios"
+                  ]
+                }
+            ],
+            "image": "/ProjectsImages/SharedListsCapture.png",
+            "link": "https://sharedlists-app-frontend.vercel.app/"
+        },
+        {
+            "id": "3",
+            "name": "Traversal Jewelry",
+            "description": "A Full-Stack e-commerce site, based on a fictional jewelry store. Powered by Stripe payments.",
+            "technologies": [
+                {
+                  "type": "Backend",
+                  "stack": [
+                    "Node.js",
+                    "Redux"
+                  ],
+                },
+                {
+                  "type": "Frontend",
+                  "stack": [
+                    "Next.js",
+                    "React-Bootstrap",
+                    "SCSS",
+                    "Redux",
+                    "Next-Redux-Wrapper"
+                  ],
+                },
+                {
+                  "type": "extras",
+                  "stack": [
+                    "Figma",
+                    "Axios",
+                    "Stripe",
+                    "Next-Redux-Wrapper"
+                  ]
+                }
+            ],
+            "image": "/ProjectsImages/Traversal.png",
+            "link": "https://traversal.vercel.app/"
+        }
+    ],
         }),
         computed: {
             getId() {
                 return this.$route.params.id;
             },
         },
-        async fetch() {
-           try {
+        methods: {
+            getProject() {
+                this.projects.find(el => {
+                    el.id === this.getId ? this.project = el : false; 
+                })
+            }
+        },
+        created() {
+            this.getProject();
+        }
+        /*async fetch() {
+            try {
             await this.$axios.get('/featured-projects/' + this.getId)
-            .then(res => this.project = res.data)
+            .then(res => {
+                console.log(res.data);
+                this.project = res.data;
+                this.projectImage = 'http://localhost:1337' + res.data.image.formats.medium.url;
+            })
            } catch(error) {
                console.log(error)
            }
-        },
+        } */
     }
 
 </script>
@@ -70,6 +189,7 @@ $fontLink: 300 16px 'Quicksand', sans-serif;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
     .projectData-Wrapper {
         @include mixin.media(xs) {
             width: 100%;
@@ -129,6 +249,27 @@ $fontLink: 300 16px 'Quicksand', sans-serif;
             margin-top: 50px;
         }
     }
+}
+
+.nuxt-link {
+    @include mixin.media(xs) {
+        font-size: 12px;
+    }
+    text-decoration: none;
+    font: $fontLink;
+    opacity: 0.65;
+    transition: 0.5s ease-in-out;
+    &:hover {
+        transition: 0.5s ease-in-out;
+        opacity: 1;
+    }
+}
+
+.nuxt-link-live {
+    @extend .nuxt-link;
+    margin-left: 20px;
+    color: #26A69A;
+    cursor: pointer;
 }
 
 </style>

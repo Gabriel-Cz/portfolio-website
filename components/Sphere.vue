@@ -1,5 +1,6 @@
 <template>
-  <svg class="Sphere" width="50%" height="50%" viewBox="0 0 502 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div>
+    <svg class="Sphere" width="50%" height="50%" viewBox="0 0 502 500" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="251.5" cy="250" r="250" fill="url(#paint0_radial)"/>
       <path d="M248 252L416 62.5L296 497.5L1 224L312 10.5L416 440.5L27.5 357.5L232 497.5C190.667 344.5 109.3 39 114.5 41C119.7 43 290 325.833 374.5 467L493.5 189.5" stroke="url(#paint1_radial)" stroke-opacity="0.75"/>
       <defs>
@@ -13,13 +14,14 @@
         </radialGradient>
       </defs>
   </svg>
+  </div>
 </template>
 
 <style>
 
 .Sphere{
   opacity: 0;
-  z-index: -9;
+  z-index: 9;
   position: absolute;
   top: 60px;
   right: 16px;

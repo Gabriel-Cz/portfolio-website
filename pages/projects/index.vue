@@ -11,7 +11,7 @@
               :projectId="project.id"
               :projectName="project.name"
               :projectDescription="project.description"
-              :projectImage="'http://localhost:1337' + project.image.formats.small.url"
+              :projectImage="project.image"
             />
         </div>
         </div>
@@ -28,10 +28,106 @@ import ProjectCard from '@/components/ProjectCard'
         },
         data() {
             return {
-                projectsData: "",
+                projectsData: [
+        {
+            "id": "1",
+            "name": "Plataforma Verkel",
+            "description": "An HR concept platform, this was actually an attemp to archive a real world project, with two non-developers as a team, one of them a HR lead, an the other one a Project Managment. The project cannot be omplet by a logic bussines problem. This was the root prototype to test our ideas in a web",
+            "technologies": [
+                {
+                  "type": "Stack",
+                  "stack": [
+                    "Nuxt.js",
+                    "Vuetify",
+                    "Vuex",
+                    "Firebase",
+                    "Axios"
+                  ],
+                  "extra": [
+                    "REST API Service with firebase-realtime-database",
+                    "Figma",
+                  ]
+                }
+            ],
+            "image": "/ProjectsImages/VerkelCapture.png",
+            "link": "https://plataforma-verkel-prot.herokuapp.com/",
+        },
+        {
+            "id": "2",
+            "name": "Shared Lists",
+            "description": "A Full-Stack CRUD web application based on lists, with the posibility to shared a list with someone else. This person can edit and add content to the shared list in real time (this feature is going to be implemented soon with Socket.io in mind).",
+            "technologies": [
+                {
+                  "type": "Backend",
+                  "stack": [
+                    "Node.js",
+                    "Express",
+                    "Mongoose",
+                    "MongoDB"
+                  ],
+                  "extras": [
+                    "Postman",
+                    "Figma",
+                    "JSON Web Token",
+                    "Mongo Clusters",
+                    "Middlewares Libreries",
+                    "REST API"
+                  ]
+                },
+                {
+                  "type": "Frontend",
+                  "stack": [
+                    "Vue.js",
+                    "Vuex",
+                    "Tailwind"
+                  ],
+                  "extras": [
+                    "Figma",
+                    "Axios"
+                  ]
+                }
+            ],
+            "image": "/ProjectsImages/SharedListsCapture.png",
+            "link": "https://sharedlists-app-frontend.vercel.app/"
+        },
+        {
+            "id": "3",
+            "name": "Traversal Jewelry",
+            "description": "A Full-Stack e-commerce site, based on a fictional jewelry store. Powered by Stripe payments.",
+            "technologies": [
+                {
+                  "type": "Backend",
+                  "stack": [
+                    "Node.js",
+                    "Redux"
+                  ],
+                  "extras": [
+                    "Stripe",
+                    "Next-Redux-Wrapper"
+                  ]
+                },
+                {
+                  "type": "Frontend",
+                  "stack": [
+                    "Next.js",
+                    "React-Bootstrap",
+                    "SCSS",
+                    "Redux",
+                    "Next-Redux-Wrapper"
+                  ],
+                  "extras": [
+                    "Figma",
+                    "Axios"
+                  ]
+                }
+            ],
+            "image": "/ProjectsImages/Traversal.png",
+            "link": "https://traversal.vercel.app/"
+        }
+    ],
             }
         },
-        async fetch() {
+        /*async fetch() {
             try {
                 this.$axios.get('http://localhost:1337/featured-projects')
                 .then(res => {
@@ -41,7 +137,7 @@ import ProjectCard from '@/components/ProjectCard'
             } catch (error) {
                 console.log(error)
             }
-        }
+        },*/
     }
 </script>
 

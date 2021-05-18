@@ -13,7 +13,9 @@
             </div>
         </div>
         <div class="projectImage-Wrapper">
-            <img :src="projectImage" width="100%" />
+            <a :href="projectLiveUrl">
+                <img :src="projectImage" width="100%" />
+            </a>
         </div>
     </div>
 </template>
@@ -53,6 +55,7 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
         width: 60%;
     }
     width: 50%;
+    z-index: 50;
     display: flex;
     flex-direction: row;
     margin-top: 20px;

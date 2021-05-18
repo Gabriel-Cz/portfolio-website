@@ -1,5 +1,6 @@
 <template>
   <div class="defaultContainer">
+    <Sphere />
     <TheSideBar/>
     <body>
       <Nuxt />
@@ -27,10 +28,8 @@ export default {
 
 $htmlBg: linear-gradient(76.77deg, #1C1C1C 0%, #696969 100%);
 
-.defaultContainer {
-  position: relative;
+html {
   background: $htmlBg;
-  height: 100%;
 }
 
 *,

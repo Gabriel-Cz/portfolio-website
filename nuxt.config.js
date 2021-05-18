@@ -42,9 +42,9 @@ export default {
   ],
 
   publicRuntimeConfig: {
-    axios: {
+    /*axios: {
       baseURL: 'http://localhost:1337'
-    }
+    }*/
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -52,9 +52,9 @@ export default {
     '@nuxtjs/axios'
   ],
 
-  axios: {
+  /*axios: {
     baseURL: "http://localhost:1337"
-  },
+  },*/
   server: {
     port: 8080
   },
