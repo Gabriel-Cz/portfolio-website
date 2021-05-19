@@ -9,11 +9,11 @@
             </div>
             <div class="projectLinks">
                 <NuxtLink class="nuxt-link-details" :to="'/projects/' + projectId">Project Details</NuxtLink>
-                <a class="nuxt-link-live" :href="projectLiveUrl">See Live Project</a>
+                <a class="nuxt-link-live" target="_blank" :href="projectLiveUrl">See Live Project</a>
             </div>
         </div>
         <div class="projectImage-Wrapper">
-            <a :href="projectLiveUrl">
+            <a :href="projectLiveUrl" target="_blank">
                 <img :src="projectImage" width="100%" />
             </a>
         </div>
