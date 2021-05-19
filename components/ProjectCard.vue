@@ -62,7 +62,7 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
     margin-bottom: 20px;
     .projectTextContent {
         @include mixin.media(xs) {
-            width: 60%;
+            width: 50%;
             margin: 0px 20px 10px 0px;
         }
         @include mixin.media(sm) {
@@ -81,6 +81,8 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
         h3 {
           @include mixin.media(xs) {
             font-size: 14px;
+              text-align: center;
+
           }
           letter-spacing: 1px;
           margin: 10px 0px;
@@ -88,6 +90,11 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
           font: $fontTitle;
         }
         .projectLinks {
+            @include mixin.media(xs) {
+              flex-direction: column;
+              margin-top: 0px;
+              text-align: center;
+            }
             display: flex;
             margin-top: 20px;
         }
@@ -111,12 +118,15 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
     }
     .projectImage-Wrapper {
         @include mixin.media(xs) {
-            width: 40%;
+            width: 50%;
         }
         width: 60%;
         height: 80%;
         display: flex;
         img {
+            @include mixin.media(xs) {
+                box-shadow: 2.5px 2.5px 1px rgba($color: gainsboro, $alpha: 0.5);
+            }
             padding: none;
             margin: none;
             border: 2px ridge rgba($color: white, $alpha: 0.5);
@@ -136,7 +146,7 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
 .nuxt-link {
     @include mixin.media(xs) {
         font-size: 12px;
-        margin: 0px 5px 0px 5px;
+        margin: 5px 5px 5px 5px;
     }
     text-decoration: none;
     font: $fontLink;
