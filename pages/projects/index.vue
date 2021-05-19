@@ -12,6 +12,7 @@
               :projectName="project.name"
               :projectDescription="project.description"
               :projectImage="project.image"
+              :projectLiveUrl="project.link"
             />
         </div>
         </div>

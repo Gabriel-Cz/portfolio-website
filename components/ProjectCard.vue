@@ -137,7 +137,7 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
                 cursor: pointer;
                 transition: 0.5s ease-in-out;
                 transform: translateY(-5px);
-                box-shadow: 10px 10px 3px rgba($color: gainsboro, $alpha: 0.5);
+                box-shadow: 5px 5px 1px rgba($color: gainsboro, $alpha: 0.5);
             }
         }
     }
