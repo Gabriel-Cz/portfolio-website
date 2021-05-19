@@ -95,7 +95,6 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
     .sideBar {
         @include mixin.media(xs) {
             display: flex;
-            border: solid;
             flex-direction: row;
             padding: 0px;
             width: 100%;
@@ -125,6 +124,9 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
 }
 
 .nuxt-link {
+    @include mixin.media(xs) {
+        font-size: 14px;
+    }
     text-decoration: none;
     color: floralwhite;
     font: $fontLink;
@@ -145,7 +147,7 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
 
 .linkWrapper {
     @include mixin.media(xs) {
-        margin: 0px 5px;
+        margin: 0px 10px;
     }
     margin: 40px 20px;
 }

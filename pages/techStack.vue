@@ -1,7 +1,9 @@
 <template>
-    <div>
+    <div class="mainContainer">
         <div class="container">
-            <h4> Technologies with i've worked on and currently work.</h4>
+            <div class="header-Wrapper">
+              <h4> Technologies with i've worked on and currently work.</h4>
+            </div>
             <div class="content-Wrapper">
                 <div 
                   class="projectTechnologies"
@@ -111,22 +113,35 @@ export default {
 
 @use '@/assets/_mediaMixin.scss' as mixin;
 
+.mainContainer {
+  height: 100%;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    h4 {
+    .header-Wrapper {
+      @include mixin.media(xs) {
+        font-size: 22px;
+        margin-top: 25px;
+        padding: 25px 5px;
+      }
+      background: rgba($color: black, $alpha: 0.6);
+      padding: 50px 25px;
+      width: 100%;
+      h4 {
         @include mixin.media(xs) {
-            margin-top: 50px;
+            font-size: 22px;
         }
         @include mixin.media(sm) {
             margin-top: 50px;
         }
-        margin-top: 100px;
-        font: 22px 'Libre Franklin', sans-serif;
-        color: rgba($color: floralwhite, $alpha: 0.50);
-        padding: 0px 25px;
+        text-align: center;
+        font: 28px 'Libre Franklin', sans-serif;
+        color: rgba($color: floralwhite, $alpha: 0.60);
+    }
     }
     .content-Wrapper {
         @include mixin.media(xs) {

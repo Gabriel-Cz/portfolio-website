@@ -62,7 +62,7 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
     margin-bottom: 20px;
     .projectTextContent {
         @include mixin.media(xs) {
-            width: 50%;
+            width: 60%;
             margin: 0px 20px 10px 0px;
         }
         @include mixin.media(sm) {
@@ -97,20 +97,21 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
                 display: none;
             }
             border-left: 1px ridge rgba($color: #E0E0E0, $alpha: 0.50);
-            padding-left: 10px;
+            background-color: rgba($color: black, $alpha: 0.6);
+            padding: 15px 10px;
             .projectDescription {
                 @include mixin.media(xs) {
                     font-size: 12px;
                 }
                 font: $fontDescription;
                 letter-spacing: 1px;
-                color: rgba($color: floralwhite, $alpha: 0.50);
+                color: rgba($color: floralwhite, $alpha: 0.8);
             }
         }
     }
     .projectImage-Wrapper {
         @include mixin.media(xs) {
-            width: 50%;
+            width: 40%;
         }
         width: 60%;
         height: 80%;
@@ -135,6 +136,7 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
 .nuxt-link {
     @include mixin.media(xs) {
         font-size: 12px;
+        margin: 0px 5px 0px 5px;
     }
     text-decoration: none;
     font: $fontLink;
@@ -147,12 +149,19 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
 }
 
 .nuxt-link-details {
+    @include mixin.media(xs) {
+        margin-left: 0px;
+
+    }
     @extend .nuxt-link;
     color: #29B6F6;
     margin-left: 10px;
 }
 
 .nuxt-link-live {
+    @include mixin.media(xs) {
+    margin-left: 0px;
+    }
     @extend .nuxt-link;
     margin-left: 20px;
     color: #26A69A;

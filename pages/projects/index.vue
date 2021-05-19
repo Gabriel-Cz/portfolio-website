@@ -1,8 +1,8 @@
 <template>
     <div class="pageContainer">
         <div>
-            <div class="pageHeader">
-            <p>Featured Projects</p>
+            <div class="header-Wrapper">
+               <p>Featured Projects</p>
             </div>
         <div class="projectContainer">
             <ProjectCard 
@@ -49,7 +49,7 @@ import ProjectCard from '@/components/ProjectCard'
                   ]
                 }
             ],
-            "image": "/ProjectsImages/VerkelCapture.png",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/VerkelCapture.png",
             "link": "https://plataforma-verkel-prot.herokuapp.com/",
         },
         {
@@ -87,7 +87,7 @@ import ProjectCard from '@/components/ProjectCard'
                   ]
                 }
             ],
-            "image": "/ProjectsImages/SharedListsCapture.png",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/SharedListsCapture.png",
             "link": "https://sharedlists-app-frontend.vercel.app/"
         },
         {
@@ -121,7 +121,7 @@ import ProjectCard from '@/components/ProjectCard'
                   ]
                 }
             ],
-            "image": "/ProjectsImages/Traversal.png",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/Traversal.png",
             "link": "https://traversal.vercel.app/"
         }
     ],
@@ -146,22 +146,30 @@ import ProjectCard from '@/components/ProjectCard'
 @use '@/assets/_mediaMixin.scss' as mixin;
 
 .pageContainer {
-    .pageHeader {
+    max-height: 100%;
+    min-height: 100vh;
+    .header-Wrapper {
         @include mixin.media(xs) {
-            font-size: 28px;
-            padding: 50px 20px;
+            font-size: 22px;
+            margin-top: 25px;
+            padding: 25px 5px;
         }
         @include mixin.media(sm) {
             font-size: 28px;
             padding: 20px 20px;
         }
-        color: rgba($color: floralwhite, $alpha: 0.5);
+        background-color: rgba($color: black, $alpha: 0.6);
+        color: rgba($color: floralwhite, $alpha: 0.60);
         font: 400 32px 'Libre Franklin', sans-serif;
         text-align: center;
         letter-spacing: 1px;
-        padding: 100px 20px;
+        padding: 50px 25px;
     }
     .projectContainer {
+        @include mixin.media(xs) {
+          margin-top: 25px;
+        }
+        margin-top: 50px;
         display: flex;
         justify-content: center;
         flex-direction: column;

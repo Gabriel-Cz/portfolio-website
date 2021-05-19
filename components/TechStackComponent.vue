@@ -3,7 +3,7 @@
         <div class="projectTechnologies">
             <div class="technologyInfo">
                 <div class="technologyType-Column">
-                    <h3 class="technologyType">{{ techType }} :</h3> 
+                    <h3 class="technologyType">{{ techType }} <span class="doublePoint">:</span></h3> 
                 </div>
                 <div class="singleTechSpan-Column">
                     <span 
@@ -41,6 +41,9 @@
     flex-direction: column;
     margin-top: 50px;
     .technologyInfo {
+        @include mixin.media(xs) {
+            grid-template-columns: repeat(12, 1fr);
+        } 
         letter-spacing: 1px;
         height: 100%;
         display: grid;
@@ -48,7 +51,9 @@
         margin: 20px 20px 10px 20px;
            .technologyType-Column {
             @include mixin.media(xs) {
-                grid-area: 1 / 1 / 2 / 6;
+                text-align: center;
+                margin-bottom: 15px;
+                grid-area: 1 / 1 / 2 / 13;
             } 
             @include mixin.media(sm) {
                 grid-area: 1 / 1 / 2 / 5;
@@ -57,13 +62,18 @@
             .technologyType {
                 margin: 10px 0px 10px 0px;
                 font-weight: 400;
-                text-align: end;
                 padding-top: 5px;
+                .doublePoint {
+                    @include mixin.media(xs) {
+                      display: none;
+                    } 
+                  }
                 }
             }
             .singleTechSpan-Column {
                 @include mixin.media(xs) {
-                    grid-area: 1 / 6 / 2 / 13;
+                    grid-area: 2 / 1 / 3 / 13;
+                    justify-content: center;
                 }
                 @include mixin.media(sm) {
                     grid-area: 1 / 5 / 2 / 13;
@@ -73,6 +83,9 @@
                 align-items: center;
                 grid-area: 1 / 5 / 2 / 13;
                 .singleTechSpan{
+                    @include mixin.media(xs) {
+                        margin: 5px 10px 5px 10px;
+                    }
                     margin: 10px;
                     padding: 5px 10px;
                     text-transform: capitalize;

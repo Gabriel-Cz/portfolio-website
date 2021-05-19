@@ -37,7 +37,8 @@ $fontContent: 300 18px 'Libre Franklin', sans-serif;
 
 .container {
     width: 100%;
-    height: 100vh;
+    max-height: 100%;
+    min-height: 100vh;
     color: floralwhite;
     text-align: center;
     display: flex;
@@ -45,13 +46,13 @@ $fontContent: 300 18px 'Libre Franklin', sans-serif;
     justify-content: center;
     .resumeWrapper {
       @include mixin.media(xs) {
-        margin-top: 50px;
-        width: 90%;
+        width: 100%;
       }
       @include mixin.media(sm) {
         margin-top: 50px;
         width: 75%;
       }
+      background-color: rgba($color: black, $alpha: 0.6);
       margin-top: 50px;
       width: 50%;
       border-radius: 5px;
@@ -73,6 +74,10 @@ $fontContent: 300 18px 'Libre Franklin', sans-serif;
         letter-spacing: 1px;
       }
       .content {
+        @include mixin.media(xs) {
+          font-size: 14px;
+          margin: 50px 10px 20px 10px;      
+        }
         font: $fontContent;
         margin: 50px 25px 20px 25px;
         letter-spacing: 1px;
