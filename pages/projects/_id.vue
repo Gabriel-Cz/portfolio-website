@@ -66,7 +66,7 @@ import TechStackComponent from '@/components/TechStackComponent'
                   ]
                 }
             ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/VerkelCapture.png",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/VerkelCapture.PNG",
             "link": "https://plataforma-verkel-prot.herokuapp.com/",
         },
         {
@@ -105,7 +105,7 @@ import TechStackComponent from '@/components/TechStackComponent'
                   ]
                 }
             ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/SharedListsCapture.png",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/SharedListsCapture.PNG",
             "link": "https://sharedlists-app-frontend.vercel.app/"
         },
         {
@@ -140,7 +140,7 @@ import TechStackComponent from '@/components/TechStackComponent'
                   ]
                 }
             ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/Traversal.png",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/Traversal.PNG",
             "link": "https://traversal.vercel.app/"
         }
     ],
@@ -182,7 +182,7 @@ import TechStackComponent from '@/components/TechStackComponent'
 
 $fontTitle: 400 20px'Raleway', sans-serif;
 $fontDescription: 300 16px 'Raleway', sans-serif;
-$fontLink: 300 16px 'Quicksand', sans-serif;
+$fontLink: 300 18px 'Quicksand', sans-serif;
 
 .container {
     display: flex;

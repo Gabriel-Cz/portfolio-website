@@ -32,7 +32,7 @@ import ProjectCard from '@/components/ProjectCard'
         {
             "id": "1",
             "name": "Plataforma Verkel",
-            "description": "An HR concept platform, this was actually an attemp to archive a real world project, with two non-developers as a team, one of them a HR lead, an the other one a Project Managment. The project cannot be omplet by a logic bussines problem. This was the root prototype to test our ideas in a web",
+            "description": "An HR concept platform, this was actually an attempt to archieve a real world project, with two non-developers as a team, one of them a HR lead, an the other one a Project Managment. We stoped by a logic business problem a we decide to stop it by the moment. This was the root prototype to test our ideas in a web",
             "technologies": [
                 {
                   "type": "Stack",
