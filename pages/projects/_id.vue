@@ -204,6 +204,9 @@ $fontLink: 300 18px 'Quicksand', sans-serif;
         z-index: 10;
         width: 50%;
         .projectName {
+            @include mixin.media(xs) {
+              margin-top: 50px;
+            }
             margin-top: 100px;
             text-align: center;
             h3 {
@@ -237,11 +240,15 @@ $fontLink: 300 18px 'Quicksand', sans-serif;
             justify-content: center;
             align-items: center;
             img {
+              @include mixin.media(xs) {
+                box-shadow: 2.5px 2.5px 1px rgba($color: gainsboro, $alpha: 0.5);
+              }
                border-bottom: 8px solid #E0E0E0;
                padding: none;
                margin: none;
+               border: solid 1px rgba($color: white, $alpha: 0.5);
+               box-shadow: 5px 5px 1px rgba($color: gainsboro, $alpha: 0.5);
                border-radius: 5px;
-               box-shadow: 5px 5px 10px rgba($color: #EEEEEE, $alpha: 0.25);
             } 
         }
         .projectTechnologies {
@@ -272,13 +279,16 @@ $fontLink: 300 18px 'Quicksand', sans-serif;
 }
 
 .link-Wrapper {
+  @include mixin.media(xs) {
+    margin-top: 25px;
+  }
   text-align: center;
   margin-top: 50px;
 }
 
 .nuxt-link {
     @include mixin.media(xs) {
-        font-size: 16px;
+        font-size: 18px;
     }
     text-decoration: none;
     font: $fontLink;
@@ -292,7 +302,6 @@ $fontLink: 300 18px 'Quicksand', sans-serif;
 
 .nuxt-link-live {
     @extend .nuxt-link;
-    margin-left: 20px;
     color: #26A69A;
     cursor: pointer;
 }
