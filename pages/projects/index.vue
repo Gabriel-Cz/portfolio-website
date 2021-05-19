@@ -49,7 +49,7 @@ import ProjectCard from '@/components/ProjectCard'
                   ]
                 }
             ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/VerkelCapture.png",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/VerkelCapture.PNG",
             "link": "https://plataforma-verkel-prot.herokuapp.com/",
         },
         {
@@ -87,7 +87,7 @@ import ProjectCard from '@/components/ProjectCard'
                   ]
                 }
             ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/SharedListsCapture.png",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/SharedListsCapture.PNG",
             "link": "https://sharedlists-app-frontend.vercel.app/"
         },
         {
@@ -121,7 +121,7 @@ import ProjectCard from '@/components/ProjectCard'
                   ]
                 }
             ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/Traversal.png",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/Traversal.PNG",
             "link": "https://traversal.vercel.app/"
         }
     ],
