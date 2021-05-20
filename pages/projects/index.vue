@@ -33,7 +33,7 @@ import ProjectCard from '@/components/ProjectCard'
         {
             "id": "1",
             "name": "Plataforma Verkel",
-            "description": "An HR concept platform, this was actually an attempt to archieve a real world project, with two non-developers as a team, one of them a HR lead, an the other one a Project Managment. We stoped by a logic business problem a we decide to stop it by the moment. This was the root prototype to test our ideas in a web",
+            "description": "An HR concept prototype platform of anything related to Human Resources or Human Capital. Built with Nuxt.js, Vuex, Vuetify and a REST API in conjunction with Firebase Real-Time-Database service.",
             "technologies": [
                 {
                   "type": "Stack",
@@ -56,7 +56,7 @@ import ProjectCard from '@/components/ProjectCard'
         {
             "id": "2",
             "name": "Shared Lists",
-            "description": "A Full-Stack CRUD web application based on lists, with the posibility to shared a list with someone else. This person can edit and add content to the shared list in real time (this feature is going to be implemented soon with Socket.io in mind).",
+            "description": "A Full-Stack CRUD web application based on lists, with the posibility to shared a list with someone else (this feature will be implemented at a uncertain future). This frontend was built with Vue.js 3, Vuex and Tailwind and for the backend Nodejs with Express, Mongoose, JSONwebtoken, and extra libreries for middlewares. This app has integrated a REST API previously developed, and it´s consumed using axios as HTTP Client. MongoDB database currently alocated in an atlas cluster.",
             "technologies": [
                 {
                   "type": "Backend",
@@ -94,7 +94,7 @@ import ProjectCard from '@/components/ProjectCard'
         {
             "id": "3",
             "name": "Traversal Jewelry",
-            "description": "A Full-Stack e-commerce site, based on a fictional jewelry store. Powered by Stripe payments.",
+            "description": "A Full-Stack SSR ecommerce site. Frontend built with Next.js, React-Bootstrap, Scss and Redux in conjunction with Next-Redux-Wrapper. For the server just Next Api pages (Node.js). Payments powered by Stripe.",
             "technologies": [
                 {
                   "type": "Backend",
@@ -122,7 +122,7 @@ import ProjectCard from '@/components/ProjectCard'
                   ]
                 }
             ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/Traversal.PNG",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/TraversalCapture1.PNG",
             "link": "https://traversal.vercel.app/"
         }
     ],
