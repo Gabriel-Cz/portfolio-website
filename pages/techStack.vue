@@ -74,6 +74,8 @@ export default {
         {
           "type": "Extras",
           "stack": [
+            "Vue Router",
+            "CSS-in-JS",
             "Axios",
             "Postman",
             "Github",

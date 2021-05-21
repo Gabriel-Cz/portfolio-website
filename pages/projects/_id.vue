@@ -46,7 +46,7 @@ import TechStackComponent from '@/components/TechStackComponent'
         {
             "id": "1",
             "name": "Plataforma Verkel",
-            "description": "An HR concept platform, this was actually an attemp to archive a real world project, with two non-developers as a team, one of them a HR lead, an the other one a Project Managment. The project cannot be omplet by a logic bussines problem. This was the root prototype to test our ideas in a web",
+            "description": "An HR concept prototype platform of anything related to Human Resources or Human Capital. Built with Nuxt.js, Vuex, Vuetify and a REST API in conjunction with Firebase Real-Time-Database service.",
             "technologies": [
                 {
                   "type": "Stack",
@@ -54,15 +54,12 @@ import TechStackComponent from '@/components/TechStackComponent'
                     "Nuxt.js",
                     "Vuetify",
                     "Vuex",
-                    "Firebase"
+                    "Firebase",
+                    "Axios"
                   ],
-                },
-                {
-                  "type": "Extra",
-                  "stack": [
+                  "extra": [
                     "REST API Service with firebase-realtime-database",
                     "Figma",
-                    "Axios"
                   ]
                 }
             ],
@@ -72,7 +69,7 @@ import TechStackComponent from '@/components/TechStackComponent'
         {
             "id": "2",
             "name": "Shared Lists",
-            "description": "A Full-Stack CRUD web application based on lists, with the posibility to shared a list with someone else. This person can edit and add content to the shared list in real time.",
+            "description": "A Full-Stack CRUD web application based on lists, with the posibility to shared a list with someone else (this feature will be implemented at a uncertain future). This frontend was built with Vue.js 3, Vuex and Tailwind and for the backend Nodejs with Express, Mongoose, JSONwebtoken, and extra libreries for middlewares. This app has integrated a REST API previously developed, and it´s consumed using axios as HTTP Client. MongoDB database currently alocated in an atlas cluster.",
             "technologies": [
                 {
                   "type": "Backend",
@@ -82,6 +79,15 @@ import TechStackComponent from '@/components/TechStackComponent'
                     "Mongoose",
                     "MongoDB"
                   ],
+                  "extras": [
+                    "Vue Router",
+                    "Postman",
+                    "Figma",
+                    "JSON Web Token",
+                    "Mongo Clusters",
+                    "Middlewares Libreries",
+                    "REST API"
+                  ]
                 },
                 {
                   "type": "Frontend",
@@ -90,16 +96,7 @@ import TechStackComponent from '@/components/TechStackComponent'
                     "Vuex",
                     "Tailwind"
                   ],
-                },
-                {
-                  "type": "extras",
-                  "stack": [
-                    "Postman",
-                    "Figma",
-                    "JSON Web Token",
-                    "Mongo Clusters",
-                    "Middlewares Libreries",
-                    "REST API",
+                  "extras": [
                     "Figma",
                     "Axios"
                   ]
@@ -111,7 +108,7 @@ import TechStackComponent from '@/components/TechStackComponent'
         {
             "id": "3",
             "name": "Traversal Jewelry",
-            "description": "A Full-Stack e-commerce site, based on a fictional jewelry store. Powered by Stripe payments.",
+            "description": "A Full-Stack SSR ecommerce site. Frontend built with Next.js, React-Bootstrap, Scss and Redux in conjunction with Next-Redux-Wrapper. For the server just Next Api pages (Node.js). Payments powered by Stripe.",
             "technologies": [
                 {
                   "type": "Backend",
@@ -119,6 +116,10 @@ import TechStackComponent from '@/components/TechStackComponent'
                     "Node.js",
                     "Redux"
                   ],
+                  "extras": [
+                    "Stripe",
+                    "Next-Redux-Wrapper"
+                  ]
                 },
                 {
                   "type": "Frontend",
@@ -129,18 +130,14 @@ import TechStackComponent from '@/components/TechStackComponent'
                     "Redux",
                     "Next-Redux-Wrapper"
                   ],
-                },
-                {
-                  "type": "extras",
-                  "stack": [
+                  "extras": [
+                    "CSS-in-JS",
                     "Figma",
-                    "Axios",
-                    "Stripe",
-                    "Next-Redux-Wrapper"
+                    "Axios"
                   ]
                 }
             ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/Traversal.PNG",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/TraversalCapture.PNG",
             "link": "https://traversal.vercel.app/"
         }
     ],

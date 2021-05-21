@@ -83,6 +83,7 @@ import ProjectCard from '@/components/ProjectCard'
                     "Tailwind"
                   ],
                   "extras": [
+                    "Vue Router",
                     "Figma",
                     "Axios"
                   ]
@@ -117,12 +118,13 @@ import ProjectCard from '@/components/ProjectCard'
                     "Next-Redux-Wrapper"
                   ],
                   "extras": [
+                    "CSS-in-JS",
                     "Figma",
                     "Axios"
                   ]
                 }
             ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/TraversalCapture1.PNG",
+            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/TraversalCapture.PNG",
             "link": "https://traversal.vercel.app/"
         }
     ],
