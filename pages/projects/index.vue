@@ -12,7 +12,7 @@
               :projectId="project.id"
               :projectName="project.name"
               :projectDescription="project.description"
-              :projectImage="`http://localhost:1337${project.image.formats.medium.url}`"
+              :projectImage="project.image"
               :projectLiveUrl="project.link"
             />
         </div>

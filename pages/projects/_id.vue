@@ -10,7 +10,9 @@
                 <div class="projectDescription">
                   <p>{{ project.description }}</p>
                 </div>
-                
+                <div class="projectImage">
+                  <img :src="project.image" width="100%" />
+                </div>
                 <div class="link-Wrapper">
                   <a  class="nuxt-link-live" target="_blank" :href="project.link">See Live Project</a>
                 </div>
