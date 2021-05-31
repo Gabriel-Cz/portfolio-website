@@ -43,7 +43,7 @@ export default {
 
   publicRuntimeConfig: {
     axios: {
-      baseURL: process.env.AXIOS_BASEURL || 'http://localhost:1337'
+      baseURL: process.env.AXIOS_BASEURL
     }
   },
 
@@ -53,7 +53,7 @@ export default {
   ],
 
   axios: {
-    baseURL: process.env.AXIOS_BASEURL || 'http://localhost:1337'
+    baseURL: process.env.AXIOS_BASEURL
   },
 
   server: {
