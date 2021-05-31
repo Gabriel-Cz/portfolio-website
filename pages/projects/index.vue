@@ -34,7 +34,7 @@ import ProjectCard from '@/components/ProjectCard'
         }),
         async fetch() {
             try {
-                let response = await this.$axios.get('http://localhost:1337/featured-projects');
+                let response = await this.$axios.get('/featured-projects');
                 this.projectsData = response.data;
             } catch (error) {
                 this.error = error
