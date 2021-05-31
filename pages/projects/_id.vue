@@ -1,30 +1,31 @@
 <template>
     <div>
         <div class="container">
-            <div class="projectData-Wrapper">
-               <div class="projectName">
+            <div v-if="error">{{ error }}</div>
+            <div v-else>
+              <div class="projectData-Wrapper">
+                <div class="projectName">
                   <h3>{{ project.name }}</h3>
-               </div>
-            <div class="projectDescription">
-                <p>{{ project.description }}</p>
-            </div>
-            <div class="projectImage">
-                <img :src='project.image' width="50%">
-            </div>
-            <div class="link-Wrapper">
-              <a  class="nuxt-link-live" target="_blank" :href="project.link">See Live Project</a>
-            </div>
-            <div class="projectTechnologies">
-                <div 
-                  v-for="technology in project.technologies"
-                  :key="technology.type"
-                >
+                </div>
+                <div class="projectDescription">
+                  <p>{{ project.description }}</p>
+                </div>
+                
+                <div class="link-Wrapper">
+                  <a  class="nuxt-link-live" target="_blank" :href="project.link">See Live Project</a>
+                </div>
+                <div class="projectTechnologies">
+                  <div 
+                    v-for="technology in project.technologies"
+                    :key="technology.type"
+                  >
                     <TechStackComponent 
                       :techType="technology.type"
                       :techStack="technology.stack"
                     />
-                </div> 
-            </div>
+                  </div> 
+                </div>
+              </div>
             </div>
         </div>
     </div>
@@ -41,134 +42,22 @@ import TechStackComponent from '@/components/TechStackComponent'
             TechStackComponent
         },
         data: () => ({
-            project: "",
-            projects: [
-        {
-            "id": "1",
-            "name": "Plataforma Verkel",
-            "description": "An HR concept prototype platform of anything related to Human Resources or Human Capital. Built with Nuxt.js, Vuex, Vuetify and a REST API in conjunction with Firebase Real-Time-Database service.",
-            "technologies": [
-                {
-                  "type": "Stack",
-                  "stack": [
-                    "Nuxt.js",
-                    "Vuetify",
-                    "Vuex",
-                    "Firebase",
-                    "Axios"
-                  ],
-                  "extra": [
-                    "REST API Service with firebase-realtime-database",
-                    "Figma",
-                  ]
-                }
-            ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/VerkelCapture.PNG",
-            "link": "https://plataforma-verkel-prot.herokuapp.com/",
-        },
-        {
-            "id": "2",
-            "name": "Shared Lists",
-            "description": "A Full-Stack CRUD web application based on lists, with the posibility to shared a list with someone else (this feature will be implemented at a uncertain future). This frontend was built with Vue.js 3, Vuex and Tailwind and for the backend Nodejs with Express, Mongoose, JSONwebtoken, and extra libreries for middlewares. This app has integrated a REST API previously developed, and it´s consumed using axios as HTTP Client. MongoDB database currently alocated in an atlas cluster.",
-            "technologies": [
-                {
-                  "type": "Backend",
-                  "stack": [
-                    "Node.js",
-                    "Express",
-                    "Mongoose",
-                    "MongoDB"
-                  ],
-                  "extras": [
-                    "Vue Router",
-                    "Postman",
-                    "Figma",
-                    "JSON Web Token",
-                    "Mongo Clusters",
-                    "Middlewares Libreries",
-                    "REST API"
-                  ]
-                },
-                {
-                  "type": "Frontend",
-                  "stack": [
-                    "Vue.js",
-                    "Vuex",
-                    "Tailwind"
-                  ],
-                  "extras": [
-                    "Figma",
-                    "Axios"
-                  ]
-                }
-            ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/SharedListsCapture.PNG",
-            "link": "https://sharedlists-app-frontend.vercel.app/"
-        },
-        {
-            "id": "3",
-            "name": "Traversal Jewelry",
-            "description": "A Full-Stack SSR ecommerce site. Frontend built with Next.js, React-Bootstrap, Scss and Redux in conjunction with Next-Redux-Wrapper. For the server just Next Api pages (Node.js). Payments powered by Stripe.",
-            "technologies": [
-                {
-                  "type": "Backend",
-                  "stack": [
-                    "Node.js",
-                    "Redux"
-                  ],
-                  "extras": [
-                    "Stripe",
-                    "Next-Redux-Wrapper"
-                  ]
-                },
-                {
-                  "type": "Frontend",
-                  "stack": [
-                    "Next.js",
-                    "React-Bootstrap",
-                    "SCSS",
-                    "Redux",
-                    "Next-Redux-Wrapper"
-                  ],
-                  "extras": [
-                    "CSS-in-JS",
-                    "Figma",
-                    "Axios"
-                  ]
-                }
-            ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/TraversalCapture.PNG",
-            "link": "https://traversal.vercel.app/"
-        }
-    ],
+            project: {},
+            error: ""
         }),
         computed: {
             getId() {
                 return this.$route.params.id;
             },
         },
-        methods: {
-            getProject() {
-                this.projects.find(el => {
-                    el.id === this.getId ? this.project = el : false; 
-                })
-            }
-        },
-        created() {
-            this.getProject();
-        }
-        /*async fetch() {
+        async fetch() {
             try {
-            await this.$axios.get('/featured-projects/' + this.getId)
-            .then(res => {
-                console.log(res.data);
-                this.project = res.data;
-                this.projectImage = 'http://localhost:1337' + res.data.image.formats.medium.url;
-            })
+            let response = await this.$axios.get(`/featured-projects/${this.getId}`);
+            this.project = response.data;
            } catch(error) {
-               console.log(error)
+               this.error(error);
            }
-        } */
+        }
     }
 
 </script>
@@ -182,6 +71,7 @@ $fontDescription: 300 16px 'Raleway', sans-serif;
 $fontLink: 300 18px 'Quicksand', sans-serif;
 
 .container {
+    z-index: 8;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -189,6 +79,7 @@ $fontLink: 300 18px 'Quicksand', sans-serif;
     max-height: 100%;
     min-height: 100vh;
     .projectData-Wrapper {
+        z-index: 9;
         @include mixin.media(xs) {
             width: 100%;
         }

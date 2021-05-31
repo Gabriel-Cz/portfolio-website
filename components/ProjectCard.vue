@@ -14,7 +14,7 @@
         </div>
         <div class="projectImage-Wrapper">
             <a :href="projectLiveUrl" target="_blank">
-                <img :src="projectImage" width="100%" />
+                <img :src="projectImage" height="100%" width="100%" />
             </a>
         </div>
     </div>
@@ -34,13 +34,10 @@
 </script>
 
 <style lang="scss" scoped>
-
 @use '@/assets/_mediaMixin.scss' as mixin;
-
 $fontTitle: 400 20px 'Libre Franklin', sans-serif;
 $fontDescription: 300 16px 'Libre Franklin', sans-serif;
 $fontLink: 300 16px 'Libre Franklin', sans-serif;
-
 #projectCard {
     @include mixin.media(xs) {
         width: 90%;
@@ -82,7 +79,6 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
           @include mixin.media(xs) {
             font-size: 14px;
               text-align: center;
-
           }
           letter-spacing: 1px;
           margin: 10px 0px;
@@ -124,25 +120,11 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
         height: 80%;
         display: flex;
         img {
-            @include mixin.media(xs) {
-                box-shadow: 2.5px 2.5px 1px rgba($color: gainsboro, $alpha: 0.5);
-            }
             padding: none;
             margin: none;
-            border: 2px ridge rgba($color: white, $alpha: 0.5);
-            border-radius: 5px;
-            box-shadow: 5px 5px 1px rgba($color: gainsboro, $alpha: 0.5);
-            transition: 0.5s ease-in-out;
-            &:hover {
-                cursor: pointer;
-                transition: 0.5s ease-in-out;
-                transform: translateY(-5px);
-                box-shadow: 5px 5px 1px rgba($color: gainsboro, $alpha: 0.5);
-            }
         }
     }
 }
-
 .nuxt-link {
     @include mixin.media(xs) {
         font-size: 12px;
@@ -157,17 +139,14 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
         opacity: 1;
     }
 }
-
 .nuxt-link-details {
     @include mixin.media(xs) {
         margin-left: 0px;
-
     }
     @extend .nuxt-link;
     color: #29B6F6;
     margin-left: 10px;
 }
-
 .nuxt-link-live {
     @include mixin.media(xs) {
     margin-left: 0px;
@@ -177,5 +156,4 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
     color: #26A69A;
     cursor: pointer;
 }
-
 </style>

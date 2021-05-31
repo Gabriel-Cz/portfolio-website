@@ -4,14 +4,15 @@
             <div class="header-Wrapper">
                <p>Featured Projects</p>
             </div>
-        <div class="projectContainer">
+        <div v-if="error">{{ error }}</div>
+        <div v-else class="projectContainer">
             <ProjectCard 
               v-for="project in projectsData"
               :key="project.id"
               :projectId="project.id"
               :projectName="project.name"
               :projectDescription="project.description"
-              :projectImage="project.image"
+              :projectImage="`http://localhost:1337${project.image.formats.medium.url}`"
               :projectLiveUrl="project.link"
             />
         </div>
@@ -27,120 +28,18 @@ import ProjectCard from '@/components/ProjectCard'
         components: {
             ProjectCard
         },
-        data() {
-            return {
-                projectsData: [
-        {
-            "id": "1",
-            "name": "Plataforma Verkel",
-            "description": "An HR concept prototype platform of anything related to Human Resources or Human Capital. Built with Nuxt.js, Vuex, Vuetify and a REST API in conjunction with Firebase Real-Time-Database service.",
-            "technologies": [
-                {
-                  "type": "Stack",
-                  "stack": [
-                    "Nuxt.js",
-                    "Vuetify",
-                    "Vuex",
-                    "Firebase",
-                    "Axios"
-                  ],
-                  "extra": [
-                    "REST API Service with firebase-realtime-database",
-                    "Figma",
-                  ]
-                }
-            ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/VerkelCapture.PNG",
-            "link": "https://plataforma-verkel-prot.herokuapp.com/",
-        },
-        {
-            "id": "2",
-            "name": "Shared Lists",
-            "description": "A Full-Stack CRUD web application based on lists, with the posibility to shared a list with someone else (this feature will be implemented at a uncertain future). This frontend was built with Vue.js 3, Vuex and Tailwind and for the backend Nodejs with Express, Mongoose, JSONwebtoken, and extra libreries for middlewares. This app has integrated a REST API previously developed, and it´s consumed using axios as HTTP Client. MongoDB database currently alocated in an atlas cluster.",
-            "technologies": [
-                {
-                  "type": "Backend",
-                  "stack": [
-                    "Node.js",
-                    "Express",
-                    "Mongoose",
-                    "MongoDB"
-                  ],
-                  "extras": [
-                    "Postman",
-                    "Figma",
-                    "JSON Web Token",
-                    "Mongo Clusters",
-                    "Middlewares Libreries",
-                    "REST API"
-                  ]
-                },
-                {
-                  "type": "Frontend",
-                  "stack": [
-                    "Vue.js",
-                    "Vuex",
-                    "Tailwind"
-                  ],
-                  "extras": [
-                    "Vue Router",
-                    "Figma",
-                    "Axios"
-                  ]
-                }
-            ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/SharedListsCapture.PNG",
-            "link": "https://sharedlists-app-frontend.vercel.app/"
-        },
-        {
-            "id": "3",
-            "name": "Traversal Jewelry",
-            "description": "A Full-Stack SSR ecommerce site. Frontend built with Next.js, React-Bootstrap, Scss and Redux in conjunction with Next-Redux-Wrapper. For the server just Next Api pages (Node.js). Payments powered by Stripe.",
-            "technologies": [
-                {
-                  "type": "Backend",
-                  "stack": [
-                    "Node.js",
-                    "Redux"
-                  ],
-                  "extras": [
-                    "Stripe",
-                    "Next-Redux-Wrapper"
-                  ]
-                },
-                {
-                  "type": "Frontend",
-                  "stack": [
-                    "Next.js",
-                    "React-Bootstrap",
-                    "SCSS",
-                    "Redux",
-                    "Next-Redux-Wrapper"
-                  ],
-                  "extras": [
-                    "CSS-in-JS",
-                    "Figma",
-                    "Axios"
-                  ]
-                }
-            ],
-            "image": "https://gabrielcz-portfolio.vercel.app/ProjectsImages/TraversalCapture.PNG",
-            "link": "https://traversal.vercel.app/"
-        }
-    ],
-            }
-        },
-        /*async fetch() {
+        data: () => ({
+          projectsData: [],
+          error: ""
+        }),
+        async fetch() {
             try {
-                this.$axios.get('http://localhost:1337/featured-projects')
-                .then(res => {
-                    console.log(res.data);
-                    this.projectsData = res.data
-                });
+                let response = await this.$axios.get('http://localhost:1337/featured-projects');
+                this.projectsData = response.data;
             } catch (error) {
-                console.log(error)
+                this.error = error
             }
-        },*/
+        }
     }
 </script>
 
@@ -149,9 +48,11 @@ import ProjectCard from '@/components/ProjectCard'
 @use '@/assets/_mediaMixin.scss' as mixin;
 
 .pageContainer {
+    z-index: 8;
     max-height: 100%;
     min-height: 100vh;
     .header-Wrapper {
+        z-index: 9;
         @include mixin.media(xs) {
             font-size: 22px;
             margin-top: 25px;

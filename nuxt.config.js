@@ -32,7 +32,6 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/preview.client.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -43,9 +42,9 @@ export default {
   ],
 
   publicRuntimeConfig: {
-    /*axios: {
-      baseURL: 'http://localhost:1337'
-    }*/
+    axios: {
+      baseURL: process.env.AXIOS_BASEURL || 'http://localhost:1337'
+    }
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -53,12 +52,14 @@ export default {
     '@nuxtjs/axios'
   ],
 
-  /*axios: {
+  axios: {
     baseURL: "http://localhost:1337"
-  },*/
+  },
+
   server: {
     port: 8080
   },
+  
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

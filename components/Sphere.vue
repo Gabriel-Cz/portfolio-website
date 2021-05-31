@@ -21,7 +21,7 @@
 
 .Sphere{
   opacity: 0;
-  z-index: 9;
+  z-index: 0;
   position: absolute;
   top: 60px;
   right: 16px;

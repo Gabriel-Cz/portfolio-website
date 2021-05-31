@@ -52,6 +52,7 @@ export default {
 $fontLink: 300 16px 'Libre Franklin', sans-serif;
 
 .sideBarWrapper {
+    z-index: 30;
     @include mixin.media(xs) {
         position: relative;
         width: 100%;

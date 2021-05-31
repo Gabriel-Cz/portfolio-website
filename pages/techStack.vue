@@ -4,7 +4,8 @@
             <div class="header-Wrapper">
               <h4> Technologies with i've worked on and currently work.</h4>
             </div>
-            <div class="content-Wrapper">
+            <div v-if="error" class="error" >Error al consultar contenido: { {{ error }} }</div>
+            <div v-else class="content-Wrapper">
                 <div 
                   class="projectTechnologies"
                   v-for="tech in techStackData"
@@ -23,91 +24,23 @@
 <script>
 
 import TechStackComponent from "~/components/TechStackComponent.vue"
-import data from '~/static/content.json'
 
 export default { 
     data: () => ({
-        techStackData: [
-        {
-          "type": "Frontend",
-          "stack": [
-            "Vue.js",
-            "React.js",
-            "Nuxt.js",
-            "Next.js",
-            "HTML"
-          ]
-        },
-        {
-          "type": "CSS Frameworks and Preprocessors",
-          "stack": [
-            "SCSS",
-            "Talwind",
-            "Vuetify",
-            "Bootstrap",
-            "React-Bootstrap"
-          ]
-        },
-        {
-          "type": "State Managment",
-          "stack": [
-            "Vuex",
-            "Redux",
-            "Next-Redux-Wrapper"
-          ]
-        },
-        {
-          "type": "Backend",
-          "stack": [
-            "Node.js",
-            "Express",
-            "Mongoose",
-            "MongoDB"
-          ]
-        },
-        {
-          "type": "UI sketching and Mockups",
-          "stack": [
-            "Figma"
-          ]
-        },
-        {
-          "type": "Extras",
-          "stack": [
-            "Vue Router",
-            "CSS-in-JS",
-            "Axios",
-            "Postman",
-            "Github",
-            "Stripe"
-          ]
-        }
-    ],
+        techStackData: [],
+        error: ""
     }),
     components: { 
         TechStackComponent 
     },
-    created() {
-        this.getStack
-    },
-    methods: {
-        async getStack() {
-            this.$axios.get(data)
-            .then(res => this.techStackData = res.data.stack)
-            .catch(e => console.log(e))
-        }
-    }
-    /*async fetch() {
+    async fetch() {
         try {
-            await this.$axios.get('/stack')
-            .then(res => {
-                this.techStackData = res.data.technologies;
-                console.log(res.data.technologies);
-            })
+            let response = await this.$axios.get('/stack');
+            this.techStackData = response.data.technologies;
         } catch (error) {
-            console.log(error);
+            this.error = error.message;
         }
-    } */
+    } 
 }
 </script>
 
@@ -120,10 +53,17 @@ export default {
 }
 
 .container {
+    z-index: 8;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .error {
+      margin-top: 25px;
+      text-align: center;
+      z-index: 9;
+      color: rgba($color: rgb(168, 50, 50), $alpha: 1);
+    }
     .header-Wrapper {
       @include mixin.media(xs) {
         font-size: 22px;
