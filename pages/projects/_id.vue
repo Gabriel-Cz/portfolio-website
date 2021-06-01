@@ -2,8 +2,7 @@
     <div>
         <div class="container">
             <div v-if="error">{{ error }}</div>
-            <div v-else>
-              <div class="projectData-Wrapper">
+            <div v-else class="projectData-Wrapper">
                 <div class="projectName">
                   <h3>{{ project.name }}</h3>
                 </div>
@@ -18,7 +17,7 @@
                 </div>
                 <div class="projectTechnologies">
                   <div 
-                    v-for="technology in project.technologies"
+                    v-for="technology in project.stack"
                     :key="technology.type"
                   >
                     <TechStackComponent 
@@ -27,7 +26,6 @@
                     />
                   </div> 
                 </div>
-              </div>
             </div>
         </div>
     </div>
@@ -55,6 +53,7 @@ import TechStackComponent from '@/components/TechStackComponent'
         async fetch() {
             try {
             let response = await this.$axios.get(`/featured-projects/${this.getId}`);
+            console.log(response.data);
             this.project = response.data;
            } catch(error) {
                this.error(error);
@@ -68,22 +67,22 @@ import TechStackComponent from '@/components/TechStackComponent'
 
 @use '@/assets/_mediaMixin.scss' as mixin;
 
-$fontTitle: 400 20px'Raleway', sans-serif;
-$fontDescription: 300 16px 'Raleway', sans-serif;
-$fontLink: 300 18px 'Quicksand', sans-serif;
+$fontTitle: 300 24px 'Mulish', sans-serif;
+$fontDescription: 300 16px 'Mulish', sans-serif;
+$fontLink: 300 22px 'Libre Franklin', sans-serif;
 
 .container {
     z-index: 8;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    justify-items: center;
     align-items: center;
+    flex-direction: column;
     max-height: 100%;
     min-height: 100vh;
     .projectData-Wrapper {
-        z-index: 9;
         @include mixin.media(xs) {
-            width: 100%;
+            width: 90%;
         }
         @include mixin.media(sm) {
             width: 90%;
@@ -91,8 +90,8 @@ $fontLink: 300 18px 'Quicksand', sans-serif;
         @include mixin.media(md) {
             width: 80%;
         }
-        z-index: 10;
-        width: 50%;
+        z-index: 9;
+        width: 40%;
         .projectName {
             @include mixin.media(xs) {
               margin-top: 50px;
@@ -113,33 +112,22 @@ $fontLink: 300 18px 'Quicksand', sans-serif;
             @include mixin.media(xs) {
                 font-size: 12px;
             }
-            margin: 50px 50px 0px 50px;
+            margin: 50px 0px 0px 0px;
             border-left: 1px ridge rgba($color: #E0E0E0, $alpha: 0.50);
             background-color: rgba($color: black, $alpha: 0.6);
             padding: 15px 10px;
             font: $fontDescription;
             letter-spacing: 1px;
-            color: rgba($color: floralwhite, $alpha: 0.50); 
+            color: rgba($color: floralwhite, $alpha: 0.80); 
         }
         .projectImage {
-            @include mixin.media(xs) {
-                margin-top: 25px;
-            }
-            margin-top: 50px;
+            border-right: 3px ridge rgba($color: #E0E0E0, $alpha: 0.50);
+            background-color: rgba($color: black, $alpha: 0.6);
+            margin-top: 10px;
+            padding: 10px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            img {
-              @include mixin.media(xs) {
-                box-shadow: 2.5px 2.5px 1px rgba($color: gainsboro, $alpha: 0.5);
-              }
-               border-bottom: 8px solid #E0E0E0;
-               padding: none;
-               margin: none;
-               border: solid 1px rgba($color: white, $alpha: 0.5);
-               box-shadow: 5px 5px 1px rgba($color: gainsboro, $alpha: 0.5);
-               border-radius: 5px;
-            } 
+            align-items: center; 
         }
         .projectTechnologies {
             @include mixin.media(xs) {
@@ -180,6 +168,7 @@ $fontLink: 300 18px 'Quicksand', sans-serif;
     @include mixin.media(xs) {
         font-size: 18px;
     }
+    letter-spacing: 1px;
     text-decoration: none;
     font: $fontLink;
     opacity: 0.65;

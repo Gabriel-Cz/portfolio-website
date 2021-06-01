@@ -70,18 +70,19 @@ export default {
         margin-top: 25px;
         padding: 25px 5px;
       }
+      @include mixin.media(sm) {
+            font-size: 28px;
+            padding: 20px 20px;
+      }
       background: rgba($color: black, $alpha: 0.6);
       padding: 50px 25px;
       width: 100%;
       h4 {
-        @include mixin.media(xs) {
-            font-size: 22px;
-        }
         @include mixin.media(sm) {
             margin-top: 50px;
         }
         text-align: center;
-        font: 28px 'Libre Franklin', sans-serif;
+        font: 300 24px 'Mulish', sans-serif;
         color: rgba($color: floralwhite, $alpha: 0.60);
     }
     }

@@ -36,7 +36,7 @@ export default {
 
 @use '@/assets/_mediaMixin.scss' as mixin;
 
-$fontHeader: 400 26px 'Libre Franklin', sans-serif;
+$fontHeader: 300 26px 'Libre Franklin', sans-serif;
 $fontContent: 300 18px 'Libre Franklin', sans-serif;
 
 .container {

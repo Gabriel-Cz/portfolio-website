@@ -52,7 +52,6 @@ import ProjectCard from '@/components/ProjectCard'
     max-height: 100%;
     min-height: 100vh;
     .header-Wrapper {
-        z-index: 9;
         @include mixin.media(xs) {
             font-size: 22px;
             margin-top: 25px;
@@ -62,9 +61,10 @@ import ProjectCard from '@/components/ProjectCard'
             font-size: 28px;
             padding: 20px 20px;
         }
+        z-index: 9;
         background-color: rgba($color: black, $alpha: 0.6);
         color: rgba($color: floralwhite, $alpha: 0.60);
-        font: 400 32px 'Libre Franklin', sans-serif;
+        font: 300 24px 'Mulish', sans-serif;
         text-align: center;
         letter-spacing: 1px;
         padding: 50px 25px;
