@@ -2,24 +2,30 @@
     <div class="container">
       <div class="resumeWrapper">
         <div class="div1">
-          <div class="header">Resume</div>
-             <div class="content">
+            <ThePagesHeader header="Resume" />
+            <div class="content">
               <div v-if="error">{{ error }}</div>
               <div v-else>
-                {{ content }} <br/> You can see the stack with i been worked so far in <NuxtLink class="nuxt-link" to="/techStack">Stack.</NuxtLink> 
+                {{ content }} <NuxtLink class="nuxt-link" to="/techStack">Stack.</NuxtLink> 
               </div>
-             </div>
+            </div>
         </div>
       </div>
     </div>
 </template>
 
 <script>
+
+import ThePagesHeader from "~/components/ThePagesHeader.vue"
+
 export default {
   data: () => ({
     content: "",
-    error: ""
+    error: "",
   }),
+  components: {
+    ThePagesHeader,
+  },
   async fetch() {
     try {
       let response = await this.$axios.get('/resume');
@@ -39,11 +45,13 @@ export default {
 $fontHeader: 300 26px 'Libre Franklin', sans-serif;
 $fontContent: 300 18px 'Libre Franklin', sans-serif;
 
+$boxShadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+
 .container {
     width: 100%;
     max-height: 100%;
     min-height: 100vh;
-    color: floralwhite;
+    color: black;
     text-align: center;
     display: flex;
     align-items: center;
@@ -57,13 +65,12 @@ $fontContent: 300 18px 'Libre Franklin', sans-serif;
         margin-top: 50px;
         width: 75%;
       }
-      background-color: rgba($color: black, $alpha: 0.6);
+      box-shadow: $boxShadow;
       margin-top: 50px;
       width: 50%;
       border-radius: 5px;
       .div1 {
         padding: 25px;
-        border: 4px double rgba($color: #CFD8DC, $alpha: 0.20);
         border-radius: 5px;
       }
       .div2 {

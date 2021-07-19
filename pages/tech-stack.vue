@@ -1,9 +1,7 @@
 <template>
     <div class="mainContainer">
         <div class="container">
-            <div class="header-Wrapper">
-              <h4> Technologies with i've worked on and currently work.</h4>
-            </div>
+            <ThePagesHeader header="Technologies with i've worked on and currently work." />
             <div v-if="error" class="error" >Error al consultar contenido: { {{ error }} }</div>
             <div v-else class="content-Wrapper">
                 <div 
@@ -24,6 +22,7 @@
 <script>
 
 import TechStackComponent from "~/components/TechStackComponent.vue"
+import ThePagesHeader from "~/components/ThePagesHeader.vue"
 
 export default { 
     data: () => ({
@@ -31,7 +30,8 @@ export default {
         error: ""
     }),
     components: { 
-        TechStackComponent 
+        TechStackComponent,
+        ThePagesHeader,
     },
     async fetch() {
         try {
@@ -84,7 +84,7 @@ export default {
         text-align: center;
         font: 300 24px 'Mulish', sans-serif;
         color: rgba($color: floralwhite, $alpha: 0.60);
-    }
+      }
     }
     .content-Wrapper {
         @include mixin.media(xs) {

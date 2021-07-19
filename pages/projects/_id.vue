@@ -1,34 +1,34 @@
 <template>
-    <div>
-        <div class="container">
-            <div v-if="error">{{ error }}</div>
-            <div v-else class="projectData-Wrapper">
-                <div class="projectName">
-                  <h3>{{ project.name }}</h3>
-                </div>
-                <div class="projectDescription">
-                  <p>{{ project.description }}</p>
-                </div>
-                <div class="projectImage">
-                  <img :src="project.image" width="100%" />
-                </div>
-                <div class="link-Wrapper">
-                  <a  class="nuxt-link-live" target="_blank" :href="project.link">See Live Project</a>
-                </div>
-                <div class="projectTechnologies">
-                  <div 
-                    v-for="technology in project.stack"
-                    :key="technology.type"
-                  >
-                    <TechStackComponent 
-                      :techType="technology.type"
-                      :techStack="technology.stack"
-                    />
-                  </div> 
-                </div>
-            </div>
+  <div>
+    <div class="container">
+      <div v-if="error">{{ error }}</div>
+      <div v-else class="projectData-Wrapper">
+        <div class="projectName">
+          <h3>{{ project.name }}</h3>
         </div>
+        <div class="projectDescription">
+          <p>{{ project.description }}</p>
+        </div>
+        <div class="projectImage">
+          <img :src="project.image" width="100%" />
+        </div>
+        <div class="link-Wrapper">
+          <a  class="nuxt-link-live" target="_blank" :href="project.link">See Live Project</a>
+        </div>
+        <div class="projectTechnologies">
+          <div 
+            v-for="technology in project.stack"
+            :key="technology.type"
+          >
+              <TechStackComponent 
+                :techType="technology.type"
+                :techStack="technology.stack"
+              />
+          </div> 
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -71,16 +71,18 @@ $fontTitle: 300 24px 'Mulish', sans-serif;
 $fontDescription: 300 16px 'Mulish', sans-serif;
 $fontLink: 300 22px 'Libre Franklin', sans-serif;
 
+$boxShadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+
 .container {
-    z-index: 8;
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    flex-direction: column;
-    max-height: 100%;
-    min-height: 100vh;
-    .projectData-Wrapper {
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  max-height: 100%;
+  min-height: 100vh;
+  .projectData-Wrapper {
         @include mixin.media(xs) {
             width: 90%;
         }
@@ -104,7 +106,7 @@ $fontLink: 300 22px 'Libre Franklin', sans-serif;
               }
               letter-spacing: 1px;
               margin: 10px 0px;
-              color: rgba($color: floralwhite, $alpha: 0.60);
+              color: rgba($color: black, $alpha: 0.60);
               font: $fontTitle;
             }
         }
@@ -113,21 +115,21 @@ $fontLink: 300 22px 'Libre Franklin', sans-serif;
                 font-size: 12px;
             }
             margin: 50px 0px 0px 0px;
-            border-left: 1px ridge rgba($color: #E0E0E0, $alpha: 0.50);
-            background-color: rgba($color: black, $alpha: 0.6);
             padding: 15px 10px;
             font: $fontDescription;
             letter-spacing: 1px;
-            color: rgba($color: floralwhite, $alpha: 0.80); 
+            color: rgba($color: black, $alpha: 0.80); 
         }
         .projectImage {
-            border-right: 3px ridge rgba($color: #E0E0E0, $alpha: 0.50);
-            background-color: rgba($color: black, $alpha: 0.6);
             margin-top: 10px;
             padding: 10px;
             display: flex;
             justify-content: center;
             align-items: center; 
+            img {
+              border-radius: 5px;
+              box-shadow: $boxShadow;
+            }
         }
         .projectTechnologies {
             @include mixin.media(xs) {

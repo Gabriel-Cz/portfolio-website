@@ -26,7 +26,7 @@ export default {
             transitionName: "",
             mode: "",
             internalLinks: [
-                {name: "Stack", link: "/techStack"},
+                {name: "Stack", link: "/tech-stack"},
                 {name: "Projects", link: "/projects"},
                 {name: "Resume", link: "/resume"}
             ],
@@ -129,7 +129,7 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
         font-size: 14px;
     }
     text-decoration: none;
-    color: floralwhite;
+    color: black;
     font: $fontLink;
     opacity: 0.5;
     transition: 0.5s ease-in-out;
@@ -141,7 +141,7 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
 
 .nuxt-link-active {
     text-decoration: none;
-    color: floralwhite;
+    color: black;
     font: $fontLink;
     opacity: 1;
 }

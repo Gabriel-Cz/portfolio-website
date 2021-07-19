@@ -7,11 +7,11 @@
                 </div>
                 <div class="singleTechSpan-Column">
                     <span 
-                        v-for="item in techStack"
-                        :key="item.index"  
-                        class="singleTechSpan"
+                      v-for="item in techStack"
+                      :key="item.index"  
+                      class="singleTechSpan"
                     >
-                        {{ item }}
+                        <span class="dot"></span> {{ item }}
                     </span>
                 </div>
             </div>    
@@ -36,7 +36,7 @@
 
 .projectTechnologies {
     font-family: 'Libre Franklin', sans-serif;
-    color: floralwhite;
+    color: black;
     display: flex;
     flex-direction: column;
     margin-top: 50px;
@@ -86,11 +86,20 @@
                     @include mixin.media(xs) {
                         margin: 5px 10px 5px 10px;
                     }
+                    position: relative;
                     margin: 10px;
                     padding: 5px 10px;
                     text-transform: capitalize;
-                    box-shadow: 3px 3px rgba($color: #E0E0E0, $alpha: 0.5);
-                    border: 1px ridge rgba($color: #E0E0E0, $alpha: 1.0);
+                    .dot {
+                        position: absolute;
+                        top: 50;
+                        left: 0;
+                        transform: translate(-50%, 50%);
+                        width: 5px;
+                        height: 5px;
+                        background: rgba($color: #000000, $alpha: 0.75);
+                        border-radius: 5px;
+                    }
                 }
             }
         }

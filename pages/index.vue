@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <Sphere />
     <div class="phantomDiv">This is a Phantom Div to handle the Background in this non-content landing page.</div>
   </div>
 </template>

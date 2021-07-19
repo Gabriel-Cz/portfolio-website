@@ -44,7 +44,7 @@ $fontTitle: 300 20px 'Libre Franklin', sans-serif;
 $fontDescription: 300 14px 'Libre Franklin', sans-serif;
 $fontLink: 300 15px 'Libre Franklin', sans-serif;
 
-$darkBackground: rgba($color: black, $alpha: 0.6);
+$boxShadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 
 #projectCard {
     @include mixin.media(xs) {
@@ -86,7 +86,7 @@ $darkBackground: rgba($color: black, $alpha: 0.6);
           }
           letter-spacing: 1px;
           margin: 10px 0px;
-          color: rgba($color: floralwhite, $alpha: 0.60);
+          color: rgba($color: black, $alpha: 0.60);
           font: $fontTitle;
         }
         .projectLinks {
@@ -108,9 +108,9 @@ $darkBackground: rgba($color: black, $alpha: 0.6);
             padding: 5px 5px;
             }
             height: 100%;
-            background: $darkBackground;
-            border-left: 1px ridge rgba($color: #E0E0E0, $alpha: 0.50);
-            padding: 20px 15px;
+            padding: 10px 0px;
+            padding-left: 2.5px;
+            margin-right: 25px;
             display: flex;
             flex-direction: column;
             .projectDescription {
@@ -125,7 +125,7 @@ $darkBackground: rgba($color: black, $alpha: 0.6);
                 -webkit-box-orient: vertical;
                 font: $fontDescription;
                 letter-spacing: 1px;
-                color: rgba($color: floralwhite, $alpha: 0.8);
+                color: rgba($color: black, $alpha: 0.8);
             }
         }
     }
@@ -133,14 +133,16 @@ $darkBackground: rgba($color: black, $alpha: 0.6);
         @include mixin.media(xs) {
             width: 50%;
         }
-        background: $darkBackground;
         width: 60%;
-        border-top: 1px ridge rgba($color: #E0E0E0, $alpha: 0.50);
-        border-right: 1px ridge rgba($color: #E0E0E0, $alpha: 0.50);
+        border-radius: 5px;
         height: 100%;
         display: grid;
         place-items: center;
         padding: 10px;
+        img {
+            border-radius: 5px;
+            box-shadow: $boxShadow;
+        }
     }
 }
 .nuxt-link {
