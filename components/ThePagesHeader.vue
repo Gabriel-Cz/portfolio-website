@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="header-Wrapper">
+        <div class="header">
             <h4> 
               {{ header }}
             </h4>
@@ -21,7 +21,7 @@
 
 @use '@/assets/_mediaMixin.scss' as mixin;
 
-.header-Wrapper {
+.header {
       @include mixin.media(xs) {
         font-size: 22px;
         margin-top: 25px;
@@ -31,6 +31,8 @@
             font-size: 28px;
             padding: 20px 20px;
       }
+      display: flex;
+      justify-content: center;
       padding: 50px 25px;
       width: 100%;
       h4 {

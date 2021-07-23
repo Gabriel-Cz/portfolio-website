@@ -1,26 +1,28 @@
 <template>
   <div>
-    <svg class="Sphere" width="50%" height="50%" viewBox="0 0 502 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="251.5" cy="250" r="250" fill="url(#paint0_radial)"/>
-      <path d="M248 252L416 62.5L296 497.5L1 224L312 10.5L416 440.5L27.5 357.5L232 497.5C190.667 344.5 109.3 39 114.5 41C119.7 43 290 325.833 374.5 467L493.5 189.5" stroke="url(#paint1_radial)" stroke-opacity="0.75"/>
+    <svg class="Sphere" width="50%" height="50%" viewBox="0 0 258 258" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#filter0_d)">
+        <circle cx="129" cy="125" r="125" fill="#EFEFEF"/>
+      </g>
       <defs>
-        <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(251.5 250) rotate(90) scale(250)">
-          <stop stop-color="#B8B5B3"/>
-          <stop offset="1" stop-color="#C4C4C4" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(247 245) rotate(89.9433) scale(252.5 255.352)">
-          <stop stop-color="#777272"/>
-          <stop offset="1" stop-color="#777272" stop-opacity="0.15"/>
-        </radialGradient>
+        <filter id="filter0_d" x="0" y="0" width="258" height="258" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+          <feOffset dy="4"/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+          </filter>
       </defs>
-  </svg>
+    </svg>
   </div>
 </template>
 
 <style>
 
 .Sphere{
-  opacity: 0;
+  opacity: 0.25;
   z-index: 0;
   position: absolute;
   top: 60px;
@@ -34,11 +36,12 @@
     opacity: 0;
   }
   50% {
-    opacity: 1
+    opacity: 0.25
   }
   100% {
-    opacity: 1;
+    opacity: 0.25;
   }
 }
 
 </style>
+

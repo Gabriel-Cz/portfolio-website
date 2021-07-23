@@ -11,8 +11,8 @@
                     <p class="projectDescription">{{ projectDescription }}</p>
                 </div>
                 <div class="projectLinks">
-                  <NuxtLink class="nuxt-link-details" :to="'/projects/' + projectId">Project Details</NuxtLink>
-                  <a class="nuxt-link-live" target="_blank" :href="projectLiveUrl">See Live Project</a>
+                  <NuxtLink class="nuxt-link-details" :to="'/projects/' + projectId">Details</NuxtLink>
+                  <a class="nuxt-link-live" target="_blank" :href="projectLiveUrl">Live</a>
                 </div>
             </div>
         </div>
@@ -82,7 +82,8 @@ $boxShadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
         margin: 0px 5px 0px 0px;
         h3 {
           @include mixin.media(xs) {
-            font-size: 14px;
+            font-size: 12px;
+            margin-top: 10px;
           }
           letter-spacing: 1px;
           margin: 10px 0px;
@@ -91,10 +92,8 @@ $boxShadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
         }
         .projectLinks {
             @include mixin.media(xs) {
-              flex-direction: column;
-              justify-content: start;
-              align-items: flex-start;
-              margin-top: 0px;
+                margin-top: 0px;
+                justify-content: space-around;
             }
             display: flex;
             justify-content: center;
@@ -102,10 +101,10 @@ $boxShadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
             height: 100%;
             margin-top: 20px;
         }
-        
         .projectDescription-Wrapper {
             @include mixin.media(xs) {
-            padding: 5px 5px;
+            padding: 0px 0px;
+            margin-right: 0px;
             }
             height: 100%;
             padding: 10px 0px;
@@ -131,7 +130,7 @@ $boxShadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
     }
     .projectImage-Wrapper {
         @include mixin.media(xs) {
-            width: 50%;
+            width: 75%;
         }
         width: 60%;
         border-radius: 5px;

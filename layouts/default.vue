@@ -1,6 +1,6 @@
 <template>
   <div class="defaultContainer">
-    <TheSideBar/>
+    <TheSideBar v-if="$route.path !== '/'" />
     <Nuxt />
     <TheFooter />
   </div>
@@ -21,13 +21,12 @@ export default {
 
 <style lang="scss">  
 
-$htmlBg: linear-gradient(76.77deg, #1C1C1C 0%, #696969 100%);
-
 html {
   color: black;
 }
 
-.defaultContainer{
+body {
+  height: 100%;
 }
 
 *,

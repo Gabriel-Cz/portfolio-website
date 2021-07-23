@@ -1,8 +1,7 @@
 <template>
     <div>
-        <transition name="sideBarExpand" :mode="mode">
-            <div class="sideBarWrapper">
-            <div v-show="showBar" class="sideBar">
+        <div class="sideBarWrapper">
+            <div class="sideBar">
                 <span v-for="link in internalLinks" :key="link.name" class="linkWrapper">
                   <NuxtLink class="nuxt-link" :to="link.link">
                       {{ link.name }}
@@ -13,7 +12,6 @@
                 </span>
             </div>
         </div>
-        </transition>
     </div>
 </template>
 
@@ -22,25 +20,17 @@
 export default {
     data() {
         return {
-            showBar: true,
-            transitionName: "",
-            mode: "",
             internalLinks: [
                 {name: "Stack", link: "/tech-stack"},
                 {name: "Projects", link: "/projects"},
-                {name: "Resume", link: "/resume"}
+                {name: "Resume", link: "/resume"},
+                {name: "Contact", link: "/contact"}
             ],
             externalLinks: [
                 {name: "Github", link: "https://github.com/Gabriel-Cz"},
-                {name: "LinkedIn", link: "https://www.linkedin.com/in/gabriel-c%C3%A1zares-96a9b220a/"}
             ]
         }
     },
-    computed: {
-        changeAnimationState() {
-            return this.showBar ? this.mode = "out-in" : "in-out";
-        }
-    }
 }
 
 </script>
@@ -49,10 +39,7 @@ export default {
 
 @use '@/assets/_mediaMixin.scss' as mixin;
 
-$fontLink: 300 16px 'Libre Franklin', sans-serif;
-
 .sideBarWrapper {
-    z-index: 30;
     @include mixin.media(xs) {
         position: relative;
         width: 100%;
@@ -83,9 +70,9 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
         overflow: hidden;
         grid-template-columns: none;
     }
+    z-index: 30;
     position: fixed;
     width: 15%;
-    z-index: 1;
     overflow-x: hidden;
     height: 100%;
     display: grid;
@@ -110,58 +97,12 @@ $fontLink: 300 16px 'Libre Franklin', sans-serif;
             flex-direction: row;
             padding: 0px;
         }
-        animation: ExpandSideBar;
         height: 100%;
         display: flex;
         flex-direction: column;
         padding: 20px 20px;
         justify-content: center;
         align-items: center;
-    }
-    .dots {
-        text-align: center;
-        color: floralwhite;
-    }
-}
-
-.nuxt-link {
-    @include mixin.media(xs) {
-        font-size: 14px;
-    }
-    text-decoration: none;
-    color: black;
-    font: $fontLink;
-    opacity: 0.5;
-    transition: 0.5s ease-in-out;
-    &:hover {
-        transition: 0.5s ease-in-out;
-        opacity: 1;
-    }
-}
-
-.nuxt-link-active {
-    text-decoration: none;
-    color: black;
-    font: $fontLink;
-    opacity: 1;
-}
-
-.linkWrapper {
-    @include mixin.media(xs) {
-        margin: 0px 10px;
-    }
-    margin: 40px 20px;
-}
-
-@keyframes ExpandSideBar {
-    from {
-        opacity: 0;
-        transition: 0.5s ease-in-out;
-    }
-    to {
-        opacity: 1;
-        transition: 0.5s ease-in-out;
-        transform: translate(-25, -25);
     }
 }
 

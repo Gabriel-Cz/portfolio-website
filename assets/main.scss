@@ -1,3 +1,7 @@
+@use '@/assets/_mediaMixin.scss' as mixin;
+
+$fontLink: 300 16px 'Libre Franklin', sans-serif;
+
 .page-enter-active,
 .page-leave-active, html {
   transition: opacity 0.5s;
@@ -6,4 +10,33 @@
 .page-enter,
 .page-leave-to {
   opacity: 0;
+}
+
+.nuxt-link {
+  @include mixin.media(xs) {
+      font-size: 14px;
+  }
+  text-decoration: none;
+  color: black;
+  font: $fontLink;
+  opacity: 0.5;
+  transition: 0.5s ease-in-out;
+  &:hover {
+      transition: 0.5s ease-in-out;
+      opacity: 1;
+  }
+}
+
+.nuxt-link-active {
+  text-decoration: none;
+  color: black;
+  font: $fontLink;
+  opacity: 1;
+}
+
+.linkWrapper {
+  @include mixin.media(xs) {
+      margin: 0px 10px;
+  }
+  margin: 40px 20px;
 }
