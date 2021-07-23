@@ -46,8 +46,6 @@ $fontContent: 300 18px 'Libre Franklin', sans-serif;
 $boxShadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 
 .container {
-    max-height: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     .content {
@@ -66,7 +64,7 @@ $boxShadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
       text-align: center;
       border-radius: 5px;
       font: $fontContent;
-      padding: 20px 30px;
+      padding: 30px 40px;
       letter-spacing: 1px;
       line-height: 25px;
       .nuxt-link {
