@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ThePagesHeader header="Get a Quote" />
+        <ThePagesHeader header="Contact Me" />
         <div class="container">
             <div class="content">
                 <TheContactForm />

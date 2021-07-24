@@ -11,7 +11,9 @@
                       :key="item.index"  
                       class="singleTechSpan"
                     >
-                        <span class="dot"></span> {{ item }}
+                        <span class="dot">
+                            <img width="100%" :src="`/svgIcons/${item.toLowerCase()}.svg`" alt="Logo" />
+                        </span> {{ item }}
                     </span>
                 </div>
             </div>    
@@ -92,12 +94,11 @@
                     text-transform: capitalize;
                     .dot {
                         position: absolute;
-                        top: 50;
+                        top: 0;
                         left: 0;
-                        transform: translate(-50%, 50%);
-                        width: 5px;
-                        height: 5px;
-                        background: rgba($color: #000000, $alpha: 0.75);
+                        transform: translate(-50%, 0%);
+                        width: 15px;
+                        height: 15px;
                         border-radius: 5px;
                     }
                 }

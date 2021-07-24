@@ -5,7 +5,9 @@
         <div class="content">
           <div v-if="error">{{ error }}</div>
           <div v-else>
-            {{ content }} <NuxtLink class="nuxt-link" to="/techStack">Stack.</NuxtLink> 
+            {{ content }}
+            <br/> 
+            You can see the stack with i've been worked so far in <NuxtLink class="nuxt-link" to="/techStack">Stack.</NuxtLink> 
           </div>
         </div>
       </div>
