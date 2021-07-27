@@ -11,9 +11,7 @@
                       :key="item.index"  
                       class="singleTechSpan"
                     >
-                        <span class="dot">
-                            <img width="100%" :src="`/svgIcons/${item.toLowerCase()}.svg`" alt="Logo" />
-                        </span> {{ item }}
+                        {{ item }}
                     </span>
                 </div>
             </div>    

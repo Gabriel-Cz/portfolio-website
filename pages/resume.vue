@@ -3,7 +3,9 @@
       <ThePagesHeader header="Resume" />
       <div class="container">
         <div class="content">
-          <div v-if="error">{{ error }}</div>
+          <div v-if="error">
+            Error retriving the content: {{ error }}
+          </div>
           <div v-else>
             {{ content }}
             <br/> 

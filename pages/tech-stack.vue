@@ -1,8 +1,8 @@
 <template>
     <div class="mainContainer">
         <div class="container">
-            <ThePagesHeader header="Technologies with i've worked on and currently work." />
-            <div v-if="error" class="error" >Error al consultar contenido: { {{ error }} }</div>
+            <ThePagesHeader header="Stack Technology" />
+            <div v-if="error" class="error" >Error retriving the content: { {{ error }} }</div>
             <div v-else class="content-Wrapper">
                 <div 
                   class="projectTechnologies"

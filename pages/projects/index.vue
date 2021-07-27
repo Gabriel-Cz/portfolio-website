@@ -2,7 +2,9 @@
     <div class="pageContainer">
         <div>
             <ThePagesHeader header="Featured Projects" />
-            <div v-if="error">{{ error }}</div>
+            <div v-if="error">
+                Error retriving the content: {{ error }}
+            </div>
             <div v-else class="projectContainer">
                 <ProjectCard 
                   v-for="project in projectsData"

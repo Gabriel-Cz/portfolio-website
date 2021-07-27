@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="container">
-      <div v-if="error">{{ error }}</div>
+      <div v-if="error">
+        Error retriving the content: {{ error }}
+      </div>
       <div v-else class="projectData-Wrapper">
         <div class="projectName">
           <h3>{{ project.name }}</h3>
