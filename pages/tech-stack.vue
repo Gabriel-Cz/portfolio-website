@@ -1,7 +1,7 @@
 <template>
     <div class="mainContainer">
         <div class="container">
-            <ThePagesHeader header="Stack Technology" />
+            <ThePagesHeader header="Technology Stack" />
             <div v-if="error" class="error" >Error retriving the content: { {{ error }} }</div>
             <div v-else class="content-Wrapper">
                 <div 
