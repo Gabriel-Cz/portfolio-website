@@ -29,6 +29,9 @@ export default {
         techStackData: [],
         error: ""
     }),
+    head: {
+      title: "Gabriel Cz | Tech Stack"
+    },
     components: { 
         TechStackComponent,
         ThePagesHeader,

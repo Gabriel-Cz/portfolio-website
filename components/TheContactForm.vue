@@ -14,6 +14,7 @@
                     <input class="input"
                       type="email" 
                       name="_replyto"
+                      placeholder="Email"
                     />
                 </div>
               </div>
@@ -23,10 +24,11 @@
                 </div>
                 <div class="inputWrapper">
                     <textarea 
-                    rows="10"
+                      rows="10"
                       form="contactForm"
                       class="input textarea" 
                       name="message"
+                      placeholder="Message"
                     >
                     </textarea>
                 </div>
@@ -76,11 +78,12 @@ $fontFamily: 'Libre Franklin', sans-serif;
         .label {
             text-align: center;
             padding: 15px 5px;
-            color: rgba($color: gray, $alpha: 0.75);
+            color: rgba($color: rgb(0, 0, 0), $alpha: 1);
         }
         .inputWrapper {
             width: 100%;
             .input {
+              margin-top: 10px;
               width: 100%;
               padding: 5px 5px;
               border-radius: 2.5px;
@@ -105,15 +108,17 @@ $fontFamily: 'Libre Franklin', sans-serif;
             letter-spacing: 1px;
             font-size: large;
             padding: 7.5px 10px;
-            width: 50%;
             border-radius: 3px;
             border: none;
+            width: 100%;
+            margin-left: 9px; 
+            margin-right: 9px; 
             color: rgba($color: rgb(255, 255, 255), $alpha: 1);
             transition: ease-in-out 0.3s;
             &:hover {
                 transition: ease-in-out 0.3s;
                 cursor: pointer;
-                background: rgba($color: #2979FF, $alpha: 1.0);
+                background: rgba($color: #1d64df, $alpha: 1.0);
             }
     }
     }

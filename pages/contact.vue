@@ -18,6 +18,9 @@ import ThePagesHeader from '@/components/ThePagesHeader.vue';
         components: {
             TheContactForm,
             ThePagesHeader,
+        },
+        head: {
+            title: 'Gabriel Cz | Contact'
         }
     }
 </script>

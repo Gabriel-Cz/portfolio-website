@@ -9,7 +9,7 @@
           <div v-else>
             {{ content }}
             <br/> 
-            You can see the stack with i've been worked so far in <NuxtLink class="nuxt-link" to="/techStack">Stack.</NuxtLink> 
+            You can see the stack with i've been worked so far in <NuxtLink class="nuxt-link" to="/tech-stack">Stack.</NuxtLink> 
           </div>
         </div>
       </div>
@@ -25,6 +25,9 @@ export default {
     content: "",
     error: "",
   }),
+  head: {
+    title: "Gabriel Cz | Resume"
+  },
   components: {
     ThePagesHeader,
   },

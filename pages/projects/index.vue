@@ -34,6 +34,9 @@ import ThePagesHeader from "~/components/ThePagesHeader.vue"
           projectsData: [],
           error: ""
         }),
+        head: {
+            title: "Gabriel Cz | Projects"
+        },
         async fetch() {
             try {
                 let response = await this.$axios.get('/featured-projects');
